@@ -1,2 +1,2 @@
-# muhu-c.github.com
+# muhu-c.github.io
 test
