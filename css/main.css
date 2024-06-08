@@ -1161,11 +1161,6 @@ pre .javascript .function {
   position: fixed;
   top: 0;
 }
-@media (max-width: 991px) {
-  .sidebar {
-    display: none;
-  }
-}
 .sidebar-inner {
   color: #999;
   padding: 18px 10px;
@@ -1219,7 +1214,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #559411;
+  background: #73285c;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1338,7 +1333,6 @@ pre .javascript .function {
   .sidebar-toggle {
     left: 20px;
     opacity: 0.8;
-    display: none;
   }
 }
 .sidebar-toggle:hover .toggle-line {
@@ -2506,7 +2500,7 @@ ul.breadcrumb li + li:last-child {
 }
 body {
   background: #242424;
-  background: url("https://www.freeimg.cn/i/2024/06/08/6663e11ae5f54.jpg");
+  background: url("https://muhu-c-1316618217.cos.ap-nanjing.myqcloud.com/images/DJI_0201.JPG");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
