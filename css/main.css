@@ -1219,7 +1219,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #08048b;
+  background: #559411;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2505,6 +2505,7 @@ ul.breadcrumb li + li:last-child {
   opacity: 1;
 }
 body {
+  background: #242424;
   background: url("https://www.freeimg.cn/i/2024/06/08/6663e11ae5f54.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
