@@ -17,7 +17,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"muhu-c.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+    var CONFIG = {"hostname":"muhu-c.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"flat"},"back2top":{"enable":true,"sidebar":true,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"buttons","active":"gitalk","storage":true,"lazyload":false,"nav":{"gitalk":{"order":-1}},"activeClass":"gitalk"},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
   </script>
 
   <meta property="og:type" content="website">
@@ -139,10 +139,6 @@
     </header>
 
     
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
 
 
     <main class="main">
@@ -181,7 +177,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-06-08 10:02:28 / 修改时间：10:03:37" itemprop="dateCreated datePublished" datetime="2024-06-08T10:02:28+08:00">2024-06-08</time>
+              <time title="创建时间：2024-06-08 10:02:28 / 修改时间：12:52:33" itemprop="dateCreated datePublished" datetime="2024-06-08T10:02:28+08:00">2024-06-08</time>
             </span>
 
           
@@ -245,7 +241,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-06-08 10:01:19" itemprop="dateModified" datetime="2024-06-08T10:01:19+08:00">2024-06-08</time>
+                <time title="修改时间：2024-06-08 12:55:12" itemprop="dateModified" datetime="2024-06-08T12:55:12+08:00">2024-06-08</time>
               </span>
 
           
@@ -280,23 +276,12 @@
 <li>点击上方栏中加号，选择新建存储库 (New repository)， Owner 旁边存储库名必须为 “账户名.github.io” 才能建立 Pages，Create Reponsitory 完成。示例如下<br><img src="https://s3.bmp.ovh/imgs/2024/06/08/ce1cdc85986df74f.png"></li>
 </ul>
 <hr>
-<h3 id="第二步-配置"><a href="#第二步-配置" class="headerlink" title="第二步 配置"></a>第二步 配置</h3><p>在你的电脑中设置一个空文件夹，作为网站根目录<br>右击菜单点击 Git Bash 打开 Git 命令行。<br><img src="https://s3.bmp.ovh/imgs/2024/06/04/9eebd66e9eaf7054.png" alt="image"><br>在命令行中输入如下命令，配置Git用户名和邮箱地址  </p>
-<pre><code>git config --global user.name &quot;你的Github用户名&quot;  
-git config --global user.email &quot;你的Github邮箱&quot;  
-</code></pre>
-<p><strong>安装 Hexo 以及推送程序</strong>  </p>
-<pre><code>npm install -g hexo-cli   
-npm install hexo-deployer-git --save    
-</code></pre>
-<p><strong>新建 SSH 密钥</strong>  </p>
+<h3 id="第二步-配置"><a href="#第二步-配置" class="headerlink" title="第二步 配置"></a>第二步 配置</h3><p>在你的电脑中设置一个空文件夹，作为网站根目录<br>右击菜单点击 Git Bash 打开 Git 命令行。<br><img src="https://s3.bmp.ovh/imgs/2024/06/04/9eebd66e9eaf7054.png" alt="image"><br>在命令行中输入如下命令，配置Git用户名和邮箱地址<br>  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.name</span> <span class="string">&quot;你的Github用户名&quot;</span>  </span><br><span class="line">git config <span class="attr">--global</span> user<span class="selector-class">.email</span> <span class="string">&quot;你的Github邮箱&quot;</span>  </span><br></pre></td></tr></table></figure><br><strong>安装 Hexo 以及推送程序</strong><br>  <figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> -g hexo-cli   </span><br><span class="line">npm <span class="keyword">install</span> hexo-deployer-git --save    </span><br></pre></td></tr></table></figure><br><strong>新建 SSH 密钥</strong>  </p>
 <ul>
 <li><p>查看用户目录下 .ssh 文件夹是否有文件，如果有且没有配置 ssh，请删除用户目录下 .ssh 文件夹中的 id_rsa 文件  </p>
 </li>
 <li><p>生成密钥并复制此密钥，格式如下  </p>
-<pre><code>  ssh-keygen -t rsa -C &quot;你的Github邮箱&quot;  
-  cat id_rsa.pub  
-</code></pre>
-</li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C <span class="string">&quot;你的Github邮箱&quot;</span>  </span><br><span class="line"><span class="built_in">cat</span> id_rsa.pub  </span><br></pre></td></tr></table></figure></li>
 <li><p>密钥格式： </p>
 <pre><code>  ssh-rsa ......(密钥字符)
 </code></pre>
@@ -304,16 +289,10 @@ npm install hexo-deployer-git --save
 </ul>
 <p><strong>上传密钥</strong>  </p>
 <p>打开 Github，进入 Setting -&gt; SSH and GPG keys -&gt; New SSH key<br><img src="https://s3.bmp.ovh/imgs/2024/06/05/0f92f04c43e62a33.png" alt="image"><br>新建密钥，名字自由填写，密钥填入刚刚复制的密钥<br><img src="https://s3.bmp.ovh/imgs/2024/06/05/0e45989394823583.png" alt="image"><br>点击 Add SSH Key 完成   </p>
-<p><strong>验证配置</strong><br>在 Git Bash 上使用下列命令验证 Git 是否登录完成    </p>
-<pre><code>ssh -T git@github.com  
-</code></pre>
-<p>如果出现下列输出    </p>
+<p><strong>验证配置</strong><br>在 Git Bash 上使用下列命令验证 Git 是否登录完成<br>  <figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">ssh</span> -T git<span class="variable">@github</span>.com  </span><br></pre></td></tr></table></figure><br>如果出现下列输出    </p>
 <pre><code>Connection closed by 198.18.0.4 port 22  
 </code></pre>
-<p>请使用另一方案    </p>
-<pre><code>ssh -T -p 443 git@ssh.github.com  
-</code></pre>
-<p>出现下列情况即为成功  </p>
+<p>请使用另一方案<br>  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T -<span class="selector-tag">p</span> <span class="number">443</span> git@ssh<span class="selector-class">.github</span><span class="selector-class">.com</span>  </span><br></pre></td></tr></table></figure><br>出现下列情况即为成功  </p>
 <pre><code>Hi 你的用户名! You&#39;ve successfully authenticated, but GitHub does not provide shell access.  
 </code></pre>
 <hr>
@@ -323,11 +302,7 @@ cd ...(你的博客根目录文件夹名)
 npm install  
 </code></pre>
 <p><img src="https://s3.bmp.ovh/imgs/2024/06/05/93975d9b58c0c88d.png" alt="image"><br><img src="https://s3.bmp.ovh/imgs/2024/06/05/14bbdbc41719680a.png" alt="image">  </p>
-<p>生成静态文件并启动本地网页  </p>
-<pre><code>hexo g  
-hexo s  
-</code></pre>
-<p>成功后示例输出，点击链接(本地网站)访问，初始页面如下  </p>
+<p>生成静态文件并启动本地网页<br>  <figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo g  </span></span><br><span class="line"><span class="attribute">hexo s</span>  </span><br></pre></td></tr></table></figure><br>成功后示例输出，点击链接(本地网站)访问，初始页面如下  </p>
 <p><img src="https://s3.bmp.ovh/imgs/2024/06/05/5ca382ff5c35241b.png" alt="image"><br><img src="https://s3.bmp.ovh/imgs/2024/06/05/6f13d59f0975704c.png" alt="image">  </p>
 <p>博客根目录(以下简称”根目录”)文件夹下的 source 和 themes 是我们需要的文件夹，下面是网站初始状态的文件  </p>
 <pre><code>source  
@@ -362,8 +337,7 @@ language: zh-CN
 <p>找到文章(MarkDown 文件)，使用 MarkDown 语法编辑文章即可  </p>
 <hr>
 <h3 id="第四步-推送网站"><a href="#第四步-推送网站" class="headerlink" title="第四步 推送网站"></a>第四步 推送网站</h3><p>使用命令推送网站，等待 Github Actions 完成即可访问。</p>
-<pre><code>hexo g -d  
-</code></pre>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo g -d</span>  </span><br></pre></td></tr></table></figure>
 <p><img src="https://s3.bmp.ovh/imgs/2024/06/08/315c71f3ef102cdd.png"></p>
 
       
@@ -547,6 +521,10 @@ language: zh-CN
 
 
       </div>
+        <div class="back-to-top motion-element">
+          <i class="fa fa-arrow-up"></i>
+          <span>0%</span>
+        </div>
 
     </div>
   </aside>
