@@ -1214,7 +1214,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #73285c;
+  background: #ff50ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2500,7 +2500,7 @@ ul.breadcrumb li + li:last-child {
 }
 body {
   background: #242424;
-  background: url("https://muhu-c-1316618217.cos.ap-nanjing.myqcloud.com/images/DJI_0201.JPG");
+  background: url("https://muhu-c-images.pages.dev/file/b54fb7efb0a34c810035e.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
