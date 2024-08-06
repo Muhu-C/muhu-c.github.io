@@ -1214,7 +1214,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #7e17cb;
+  background: #ffc;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2500,7 +2500,6 @@ ul.breadcrumb li + li:last-child {
 }
 body {
   background: #242424;
-  background: url("https://gitee.com/zzhkjf/images/raw/master/Background.JPG");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
