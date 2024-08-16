@@ -1214,7 +1214,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #dafbff;
+  background: #9422ff;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2500,7 +2500,7 @@ ul.breadcrumb li + li:last-child {
 }
 body {
   background: #242424;
-  background: url("https://muhu-c-images.pages.dev/file/88e42bd5254b425bfade2.jpg");
+  background: url("https://muhu-c-images.pages.dev/file/cfbd24b61cd927a724c3e.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
