@@ -1,0 +1,12 @@
+- title: 即刻短文
+  subTitle: MC118CN的日常生活。
+  tips: 随时随地，分享生活
+  buttonText: 关于我
+  buttonLink: /about/
+  limit: 30
+  home_essay: true
+  essay_list:
+    - content: 如果发现无法评论等问题，请使用Watt Toolkit等软件对Netlify进行加速！
+      date: 2025/07/04
+    - content: 这里是MC118CN的网站，主题已更新为AnZhiYu主题！
+      date: 2025/07/04

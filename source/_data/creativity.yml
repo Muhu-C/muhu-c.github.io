@@ -9,12 +9,18 @@
     - name: Git
       color: "#df5b40"
       icon: https://bu.dusays.com/2023/04/09/643293b10ccdd.webp
+    - name: DJI
+      color: "f0f0f0"
+      icon: https://www-cdn.djiits.com/dps/a4cb06c299208ffb34ecdcf8b2a5d94a.svg
     - name: C#
       color: "#FF33FF"
       icon: https://ts4.tc.mm.bing.net/th/id/OIP-C.y1UaghFIGchdH1KkTjgR8AAAAA
     - name: C++
       color: "#3399ff"
       icon: /cpp.png
+    - name: bilibili
+      color: "#f0f0f0"
+      icon: /bilibili.png
     - name: Premiere Pro
       color: "#7f00ff"
       icon: https://fullforms.com/images/image/Pr_10654.png
