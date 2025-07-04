@@ -1,0 +1,20 @@
+- class_name: 开启创造力
+  creativity_list:
+    - name: Photoshop
+      color: "#4082c3"
+      icon: https://bu.dusays.com/2022/12/15/639aa3a5c240e.png
+    - name: Python
+      color: "#fff"
+      icon: https://bu.dusays.com/2023/04/09/643293b1230f7.png
+    - name: Git
+      color: "#df5b40"
+      icon: https://bu.dusays.com/2023/04/09/643293b10ccdd.webp
+    - name: C#
+      color: "#FF33FF"
+      icon: https://ts4.tc.mm.bing.net/th/id/OIP-C.y1UaghFIGchdH1KkTjgR8AAAAA
+    - name: C++
+      color: "#3399ff"
+      icon: /cpp.png
+    - name: Premiere Pro
+      color: "#7f00ff"
+      icon: https://fullforms.com/images/image/Pr_10654.png
