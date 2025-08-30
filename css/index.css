@@ -6612,13 +6612,6 @@ span.tags-punctuation i {
 #page-header.no-top-img {
   margin-bottom: 0;
 }
-@media screen and (max-width: 768px) {
-  #page-header.no-top-img #travellings_button {
-    opacity: 0;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-    filter: alpha(opacity=0);
-  }
-}
 #page-header:not(.nav-fixed) #percent {
   -webkit-transition: 0.3s;
   -moz-transition: 0.3s;
