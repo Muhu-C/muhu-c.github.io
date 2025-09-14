@@ -11,7 +11,7 @@ authorinfo:
    image: /img/512.png
 
 # 标题
-title: 关于本站
+title: 关于博主
 
 # 介绍块
 # 这个模块必须写完整，如果不需要可以不写
@@ -20,17 +20,17 @@ contentinfo: # 顶部个人信息展示
   name: 我是 MC118CN # 名称
   title: 是一名高中生、编程爱好者、博主 # 介绍
   tip: 个人制作的软件
-  slogan: 『杰作』
+  slogan: 『创作』
   mask:
     - Muhu SL
-    - DateTimer 木沪时间表
+    - 木沪时间表
 
 # 技能图标轮播块
 # 此模块和生涯模块在一行，如不写则生涯模块单独占满一行。
 # 主要就是 tags 中的 img 和 icon 两种，其中 img 是图片地址，icon 是图标名称，你可以在 Skill Icons 中找到图标名称，你也可以自己寻找优质的图片图标。
 skills: # 根据需求添加
   title: 技能
-  subtitle: 开启创造力
+  subtitle: 《关闭创造力》
   tags:
     - title: Premiere Pro
       color: "#aaa"
@@ -39,8 +39,8 @@ skills: # 根据需求添加
       color: "#aaa"
       img: https://s1.aigei.com/src/img/png/ee/ee8c003f9a174545946949b15c4d0761.png?e=2051020800&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:0A25m_F6nnne7POwd6Gp7zs6i_I=
     - title: Musescore
-      color: "#aaa"
-      img: https://musescore.com/static/musescore/userdata/group/avatar/a/9/e/4982448.jpg@0?cache=1719405004&bgclr=ffffff
+      color: "#fff"
+      img: https://musescore.org/themes/musescore_theme/images/custom-warning/warning-logo.jpg
     - title: Bilibili
       color: "#105"
       img: https://s1.aigei.com/src/img/png/b3/b3f429d07908487097e53c1d528b0814.png?imageMogr2/auto-orient/thumbnail/!282x282r/gravity/Center/crop/282x282/quality/85/%7CimageView2/2/w/282&e=2051020800&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:CRQVRvCFCm-RMsZ3XeZ_lmtcq2w=
@@ -60,10 +60,30 @@ skills: # 根据需求添加
       color: "#df5b40"
       icon: fab fa-git
 
+# 生涯模块
+# 生涯模块和技能图标轮播模块在一行，如不写则技能图标轮播模块单独占满一行。
+careers:
+  title: 生涯
+  subtitle: 无限进步
+  items:
+    - school: Python
+      major: 学习
+      timespan: 2021 ~ 2022
+      color: "#357ef5"
+    - school: C++
+      major: 学习
+      timespan: 2022 ~ 2024
+      color: "#256ee5"
+    - school: C#
+      major: 自学并创建项目
+      timespan: 2023 ~ 现在
+      color: "#155ed5"
+
+
 # 性格模块
 #personalities:
 #  tips: 性格
-#  title: 主人公
+##  title: 主人公
 #  color: "#56a178"
 #  type: ENFJ-A / ENFJ-T
 #  image: https://cdn.lightxi.com/cloudreve/uploads/2025/07/31/4jR76Exr_enfj.svg
@@ -73,19 +93,28 @@ skills: # 根据需求添加
 #  typeName: 主人公
 #  myphoto: https://blog.xiowo.net/img/avatar.png
 
+
+# 自定义
+cause:
+  tip: 
+  title: 为什么建站？
+  subtitle: 记录美好
+  contenta: 分享记忆
+  contentb: 帮助他人
+
 # 座右铭
 motto:
-  title: 座右铭
-  prefix: 有志者，
-  content: 事竟成。
+  title: 格言
+  prefix: 锲而不舍，
+  content: 金石可镂。
 
 # 特长模块
 expertise:
   title: 特长
-  prefix: 数学、物理、
-  specialist: 音乐
-  content: 学习能力
-  level: MAX
+  prefix: 音乐
+  specialist: (钢琴)
+  content: 编程
+  level: 
 
 # 游戏模块
 # 这个模块可以写多个，但最好不要超过 4 个。
@@ -94,9 +123,9 @@ game:
     img: https://act-webstatic.mihoyo.com/event-static/2023/08/15/cc72ddf351003a4a9b618e5f4697dad0_2771553456903788244.jpg?x-oss-process=image/quality,Q_80/resize,m_lfit,s_700
     subtitle: Genshin Impact
     box_shadow: "0 -69px 203px 11px #04120f inset"
-    # icon_group:
-    #   - https://7.isyangs.cn/66/6738b472ce11f-66.webp
-    #   - https://solitude.js.org/example.png
+    #icon_group:
+    #  - https://7.isyangs.cn/66/6738b472ce11f-66.webp
+    #  - https://solitude.js.org/example.png
     tips_left: 目前只玩的
     tips_right: "官服冒险等阶: 58"
   - title: 爱好
@@ -109,11 +138,11 @@ game:
 likes:
   - type: like-technology
     bg: https://www.helloimg.com/i/2025/08/26/68ad3831483f8.jpg
-    tips: 关注偏好
+    tips: 爱好
     title: 音乐&计算机
     subtips: 
   - type: like-music
-    bg: https://music.mcya.cn/images/bg/0.webp
+    bg: https://www.helloimg.com/i/2025/09/14/68c65a7f69635.jpg
     tips: 音乐偏好
     title: 纯音乐、C418、HOYO-MiX
     subtips: 
@@ -123,10 +152,10 @@ likes:
 
 # 网站统计数据展示模块
 tj: # 统计
-  provider: custom # 值为 51la（51la网站统计）或 custom（自建统计）
-  url: # 需要到51la官网注册自行获取 or 自行搭建 Heo 的 百度统计项目，填写访问地址即可
+  provider: custom # 自建 Umami 统计
+  url: # Umami 统计地址
   - https://umami-api.mc118cn.cn/json-api/stats
-  img: https://i.p-i.vip/33/20250725-6883987819a97.webp # 背景
+  img: https://s21.ax1x.com/2025/09/14/pVWzPPK.jpg # 背景
   desc: 自建统计
 
 # 个人信息模块
@@ -140,33 +169,28 @@ oneself: # 按需填写
     light: https://www.helloimg.com/i/2025/08/26/68ad76ae746ab.jpg # 白天
     dark: https://www.helloimg.com/i/2025/08/26/68ad76ae746ab.jpg # 夜晚
 
-# 自定义
-cause:
-  tip: 
-  title: 为什么建站？
-  content:
-    <br>记录美好、分享记忆、帮助他人！
+
 
 # 十年之约
-#tenyear:
-#  tips: 十年之约
-#  title: 一个人的寂寞，一群人的狂欢。
-#  start: 2025-01-01
-#  end: 2035-01-01
+tenyear:
+  tips: 十年之约
+  title: 走过的灿烂星河，成长的一点一滴
+  start: 2024-06-03
+  end: 2034-06-03
 
 # 打赏列表
-#award:
-#  enable: true
-#  description: 感谢赞赏的人，因为你们，让我感受到写博客这件事情能够给你们创造了价值。这会让我在这条路上走得更远。
-#  tips: 总金额：¥ {sum}，将全部用于博客的维护和更新。 # 必须带 {sum}，否则无法显示总金额
-#rewardList: # 底部捐赠
-#  - name: "❖星港◎Star☆"
-#    money: 100
-#    time: 2025-01-01
-#    icon: fab fa-weixin
-#    color: "#09bb07"
-#  - name: "沫塔尔猫"
-#    money: 100
-#    time: 2025-01-01
-#    icon: fab fa-alipay
-#    color: "#1677FF"
+award:
+  enable: true
+  description: 感谢赞赏的人，因为你们，让我感受到写博客这件事情能够给你们创造了价值。这会让我在这条路上走得更远。
+  tips: 总金额：¥ {sum}，将全部用于博客的维护和更新! # 必须带 {sum}，否则无法显示总金额
+rewardList: # 底部捐赠
+  #- name: "Example 1"
+  #  money: 100
+  #  time: 2025-01-01
+  #  icon: fab fa-weixin
+  #  color: "#09bb07"
+  - name: "MC118CN"
+    money: 117
+    time: 2025-08-27
+    icon: fab fa-alipay
+    color: "#1677FF"
