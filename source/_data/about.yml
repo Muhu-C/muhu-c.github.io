@@ -153,10 +153,8 @@ likes:
 # 网站统计数据展示模块
 tj: # 统计
   provider: custom # 自建 Umami 统计
-  url: # Umami 统计地址
-  - https://umami-api.mc118cn.cn/json-api/stats
   img: https://s21.ax1x.com/2025/09/14/pVWzPPK.jpg # 背景
-  desc: 自建统计
+  desc: 使用自建统计
 
 # 个人信息模块
 oneself: # 按需填写
