@@ -3979,7 +3979,7 @@ span.tags-punctuation i {
 }
 .article-container p {
   font-size: 0.9rem;
-  line-height: 1.7;
+  line-height: 1.9;
   font-weight: 400;
   margin: 0.5rem 0;
   text-align: justify;
@@ -4136,15 +4136,15 @@ span.tags-punctuation i {
 }
 .article-container.post-content h2 {
   font-size: 1.3rem;
-  line-height: 1.7;
+  line-height: 2;
 }
 .article-container.post-content h3 {
   font-size: 1.1rem;
-  line-height: 1.6;
+  line-height: 1.8;
 }
 .article-container.post-content h4 {
   font-size: 1rem;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 .article-container.post-content h5 {
   font-size: 0.9rem;
@@ -13908,6 +13908,50 @@ body[data-type=music] #nav-music {
   line-height: 1.2;
   font-size: 15px;
   color: rgba(255,107,107,0.8);
+  font-weight: normal;
+}
+#about-page .about-statistic #statistic .statistic-loading {
+  margin-top: 15px;
+  width: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  -o-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  text-align: center;
+  color: #28b;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 40px 20px;
+  background: rgba(20,109,200,0.1);
+  border-radius: 12px;
+  border: 2px dashed rgba(34,102,200,0.3);
+}
+#about-page .about-statistic #statistic .statistic-loading small {
+  display: block;
+  margin-top: 4px;
+  line-height: 1.2;
+  font-size: 15px;
+  color: rgba(64,132,200,0.8);
   font-weight: normal;
 }
 #about-page .about-statistic .banner-button {
