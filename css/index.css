@@ -13460,7 +13460,7 @@ body[data-type=music] #nav-music {
   -o-animation: gradient 15s ease infinite;
   -ms-animation: gradient 15s ease infinite;
   animation: gradient 15s ease infinite;
-  min-height: 240px;
+  min-height: 215px;
   height: fit-content;
 }
 #about-page .author-content-item.buff .card-content {
@@ -13560,6 +13560,67 @@ body[data-type=music] #nav-music {
   margin-bottom: 8px;
 }
 #about-page .author-content-item.maxim .title1 {
+  opacity: 0.8;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
+  filter: alpha(opacity=80);
+  font-size: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+#about-page .author-content-item.cause {
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1.1;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-align: start;
+  -moz-box-align: start;
+  -o-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
+  align-items: flex-start;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  -moz-box-pack: center;
+  -o-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  min-height: 215px;
+  height: fit-content;
+}
+#about-page .author-content-item.cause .author-content-item-tips {
+  margin-top: 8px;
+}
+#about-page .author-content-item.cause .cause-title {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -o-box-orient: vertical;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+#about-page .author-content-item.cause .cause-title span:first-child {
+  opacity: 0.6;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=60)";
+  filter: alpha(opacity=60);
+  margin-top: 8px;
+}
+#about-page .author-content-item.cause .title1 {
   opacity: 0.8;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
   filter: alpha(opacity=80);
