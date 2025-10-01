@@ -367,6 +367,11 @@ const sco = {
   initbbtalk() {
     const bberTalkElement = document.querySelector("#bber-talk");
     if (bberTalkElement) {
+      if (typeof Swiper === 'undefined') {
+        console.warn('Swiper is not loaded, retrying in 500ms...');
+        setTimeout(() => this.initbbtalk(), 500);
+        return;
+      }
       new Swiper(".swiper-container", {
         direction: "vertical",
         loop: true,
