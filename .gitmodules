@@ -1,0 +1,3 @@
+[submodule "themes/muhutheme"]
+	path = themes/muhutheme
+	url = https://github.com/Muhu-C/MuhuTheme.git
