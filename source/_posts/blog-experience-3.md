@@ -7,8 +7,23 @@ tags:
 categories: 学习
 cover: https://s21.ax1x.com/2025/10/01/pVTukcT.md.png
 ---
+## 前言
 
-## 第一步 使用 Nginx 进行反向代理
+### 提示  
+- 此过程包含不少访问国外网站的要求，如无法访问，请使用 [Watt Toolkit](https://steampp.net/) 等加速软件。  
+- 若有**公网 IP 服务器**，可以直接把 SSL 证书添加到 Nginx 反向代理中进行访问，详见 **第一步 配置 Nginx**  
+- 本文章为 Solitude 主题的配置提供方法，因此从 Solitude 派生的其他主题都可使用此方法，若主题不是 Solitude 且没有内置的 Umami 统计显示，请自行修改网页代码！*（博主通过自己的文件、AI 以及其他教程摸索出了 Solitude 主题下的网站结构）*  
+- 本文章与前一篇**记自己建立博客的曲折历程**有联系。
+  
+### 要求  
+   
+1. 一台可正常运行的 **Linux** 主机（以 Ubuntu 为例） 
+2. 能访问 [Github](https://github.com/) 的网络 ( 可能需要 Watt Toolkit 等加速 )  
+3. 一定的英语和 Linux 命令行知识储备   
+4. 一个**自己的域名**  
+
+
+## 第一步 使用 Nginx 把本地 Umami 进行反向代理
 
 ### 下载 Nginx
 

@@ -5,7 +5,7 @@ tags:
     - 成长之路
     - 教程
 categories: 学习
-cover: https://www.helloimg.com/i/2025/08/27/68ae69574d7e6.png
+cover: https://s21.ax1x.com/2025/10/01/pVTukcT.md.png
 ---
 *本文章相比旧博客略有修改.*   
 *本文章原本为教程文章，可以按作者的步骤学习。*  
