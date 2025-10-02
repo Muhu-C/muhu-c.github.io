@@ -372,9 +372,22 @@ const sco = {
         setTimeout(() => this.initbbtalk(), 500);
         return;
       }
+      
+      const swiperContainer = document.querySelector(".swiper-container");
+      if (!swiperContainer) return;
+      
+      const slides = swiperContainer.querySelectorAll('.swiper-slide');
+      const slidesCount = slides.length;
+      
+      const enableLoop = slidesCount >= 3;
+      
+      if (!enableLoop) {
+        console.warn(`Swiper loop disabled: only ${slidesCount} slides available, need at least 3 for loop mode`);
+      }
+      
       new Swiper(".swiper-container", {
         direction: "vertical",
-        loop: true,
+        loop: enableLoop,
         autoplay: {
           delay: 3000,
           pauseOnMouseEnter: true,

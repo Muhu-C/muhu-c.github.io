@@ -248,3 +248,98 @@
   };
   window.utils = { ...window.utils, ...utilsFn };
 })();
+
+function initializeCard() {
+    cardTimes()
+}
+let year, month, week, date, dates, weekStr, monthStr, asideTime, asideDay, asideDayNum, animalYear, ganzhiYear, lunarMon, lunarDay;
+document.addEventListener("DOMContentLoaded", () => {
+    initializeCard()
+}
+),
+document.addEventListener("pjax:complete", () => {
+    initializeCard()
+}
+);
+const now = new Date;
+function cardTimes() {
+    year = now.getFullYear(),
+    month = now.getMonth(),
+    week = now.getDay(),
+    date = now.getDate();
+    const e = document.getElementById("card-widget-calendar");
+    if (e) {
+        weekStr = ["周日", "周一", "周二", "周三", "周四", "周五", "周六"][week];
+        const a = [{
+            month: "1月",
+            days: 31
+        }, {
+            month: "2月",
+            days: year % 4 == 0 && year % 100 != 0 || year % 400 == 0 ? 29 : 28
+        }, {
+            month: "3月",
+            days: 31
+        }, {
+            month: "4月",
+            days: 30
+        }, {
+            month: "5月",
+            days: 31
+        }, {
+            month: "6月",
+            days: 30
+        }, {
+            month: "7月",
+            days: 31
+        }, {
+            month: "8月",
+            days: 31
+        }, {
+            month: "9月",
+            days: 30
+        }, {
+            month: "10月",
+            days: 31
+        }, {
+            month: "11月",
+            days: 30
+        }, {
+            month: "12月",
+            days: 31
+        }];
+        monthStr = a[month].month,
+        dates = a[month].days;
+        const n = (week + 8 - date % 7) % 7;
+        let t = ""
+          , r = !1
+          , d = 7 - n;
+        const o = (dates - d) % 7 == 0 ? Math.floor((dates - d) / 7) + 1 : Math.floor((dates - d) / 7) + 2
+          , i = e.querySelector("#calendar-main");
+        e.querySelector("#calendar-date").style.fontSize = ["64px", "48px", "36px"][Math.min(o - 3, 2)];
+        for (let e = 0; e < o; e++) {
+            i.querySelector(`.calendar-r${e}`) || (i.innerHTML += `<div class='calendar-r${e}'></div>`);
+            for (let a = 0; a < 7; a++) {
+                0 === e && a === n && (t = 1,
+                r = !0);
+                const d = t === date ? " class='now'" : "";
+                i.querySelector(`.calendar-r${e} .calendar-d${a} a`) || (i.querySelector(`.calendar-r${e}`).innerHTML += `<div class='calendar-d${a}'><a${d}>${t}</a></div>`),
+                t >= dates && (t = "",
+                r = !1),
+                r && (t += 1)
+            }
+        }
+        const s = chineseLunar.solarToLunar(new Date(year,month,date));
+        animalYear = chineseLunar.format(s, "A"),
+        ganzhiYear = chineseLunar.format(s, "T").slice(0, -1),
+        lunarMon = chineseLunar.format(s, "M"),
+        lunarDay = chineseLunar.format(s, "d"),
+        asideTime = new Date(`${(new Date).getFullYear()}/01/01 00:00:00`),
+        asideDay = (now - asideTime) / 1e3 / 60 / 60 / 24,
+        asideDayNum = Math.floor(asideDay);
+        const l = week - asideDayNum % 7 >= 0 ? Math.ceil(asideDayNum / 7) : Math.ceil(asideDayNum / 7) + 1;
+        e.querySelector("#calendar-week").innerHTML = `第${l}周&nbsp;${weekStr}`,
+        e.querySelector("#calendar-date").innerHTML = date.toString().padStart(2, "0"),
+        e.querySelector("#calendar-solar").innerHTML = `${year}年${monthStr}&nbsp;第${asideDay.toFixed(0)}天`,
+        e.querySelector("#calendar-lunar").innerHTML = `${ganzhiYear}${animalYear}年&nbsp;${lunarMon}${lunarDay}`
+    }
+}
