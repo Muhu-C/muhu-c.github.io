@@ -154,13 +154,13 @@ likes:
 tj: # 统计
   provider: umami # 51la / umami / custom
   img: https://s21.ax1x.com/2025/09/14/pVWzPPK.jpg # 背景
-  desc: 使用自建统计 # 提示
+  desc: 使用自建统计，于 2025/10/2 换源！ # 提示
   # Umami 统计
   umami:
-    url: "https://umami-api.mc118cn.cn"  # 你的 Umami 实例 URL 根目录
-    website_id: "c8c91670-70c3-4e56-a53e-63996d7e73d5"  # 你的网站 ID
+    url: "https://umami.mc118cn.cn"  # 你的 Umami 实例 URL 根目录
+    website_id: "c5d5834f-a990-455c-822b-49316326702b"  # 你的网站 ID
     # 你的认证令牌
-    auth_token: "kVyZ/abhnsyhnVHTih6/m807ojQIfKhenctoQOQs2v+zPCzmoa3mQKl648aWM/IbJB2ut8CkS9HHdtEnmfFvJH1tPDP5kW6DeUlaq1mmi/xmClkk/ZlppGhez6sGQiK7qXhe8cQtwfj0reB2O+pb0cX2pqZ/eF+CZ6HmTc9cQNuL/UvG6hd5ztMOrkZiUgpB5vUJH2M4+8bDxW/B+4zAnEwGhGbfHdn9Kflsv9317+SUnoGH7ZZnx9hUAOxmfnjARcrq0xu5OwONRIY2bPmfzBJAV1I48WZpIafJc11x6UuaCUKz/X4Sbh9IYUQ7cP+BAXP1ImwiWIYKKP724SXkizFUG+7LHd6hz0xqoj3EDG70nod8llcgwLvJTsUW"
+    auth_token: "FutrrbWPhuNHrieknve/I93wytXpI+D4MZikqUHAS8C24L/dXxTTqnms2C9DqhzFSD086/gY0BACkKkF3RgTwz1sYE0+N9o7eCEM9tqbOtxOoxk7Yzj4xD33VK0Qc7/EMvVuvzyEREMcNXzQtqZ8XVk/zHorDwwVWKkyy21bQUhYCghVneMLZbxGg2nuVyfEh0oG1UDqKPVXtu9MSssrlCfT+MPAlTm+GcExHCMGCmed75tGgMZrVSJ2II7Tb2PYy3pMCjIuQH5/0bJlQVGQ5Z/e5UIgHapekV0UB+ogxU40wsWTIYdkuvUa8AIb/JQz+z8sM39dZNi22hcuFtwv+f5aKY9RSr+t5G0Dkl+Pcm/s7C/Cl4lcfLZsutMD"
 
 # 个人信息模块
 oneself: # 按需填写
