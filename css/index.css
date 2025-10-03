@@ -9911,6 +9911,10 @@ span.tags-punctuation {
   background-size: 200%;
   margin-right: 10px;
 }
+.banners-link-btn i {
+  width: 25px;
+  text-align: center;
+}
 .banners-link-btn:hover {
   background-position: 100% 0;
 }
