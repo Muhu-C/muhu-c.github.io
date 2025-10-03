@@ -137,12 +137,12 @@ game:
 # 爱好模块
 likes:
   - type: like-technology
-    bg: https://www.helloimg.com/i/2025/08/26/68ad3831483f8.jpg
+    bg: https://s21.ax1x.com/2025/10/03/pVTgH1I.md.jpg
     tips: 爱好
     title: 音乐&计算机
     subtips: 
   - type: like-music
-    bg: https://www.helloimg.com/i/2025/09/14/68c65a7f69635.jpg
+    bg: https://s21.ax1x.com/2025/10/03/pVTgbct.md.jpg
     tips: 音乐偏好
     title: 纯音乐、C418、HOYO-MiX
     subtips: 
@@ -157,7 +157,7 @@ tj: # 统计
   desc: 使用自建统计，于 2025/10/2 换源！ # 提示
   # Umami 统计
   umami:
-    url: "https://umami.mc118cn.cn"  # 你的 Umami 实例 URL 根目录
+    url: "https://mc118cn-umapi-dash.netlify.app/"  # 你的 Umami 实例 URL 根目录
     website_id: "c5d5834f-a990-455c-822b-49316326702b"  # 你的网站 ID
     # 你的认证令牌
     auth_token: "FutrrbWPhuNHrieknve/I93wytXpI+D4MZikqUHAS8C24L/dXxTTqnms2C9DqhzFSD086/gY0BACkKkF3RgTwz1sYE0+N9o7eCEM9tqbOtxOoxk7Yzj4xD33VK0Qc7/EMvVuvzyEREMcNXzQtqZ8XVk/zHorDwwVWKkyy21bQUhYCghVneMLZbxGg2nuVyfEh0oG1UDqKPVXtu9MSssrlCfT+MPAlTm+GcExHCMGCmed75tGgMZrVSJ2II7Tb2PYy3pMCjIuQH5/0bJlQVGQ5Z/e5UIgHapekV0UB+ogxU40wsWTIYdkuvUa8AIb/JQz+z8sM39dZNi22hcuFtwv+f5aKY9RSr+t5G0Dkl+Pcm/s7C/Cl4lcfLZsutMD"
@@ -170,8 +170,8 @@ oneself: # 按需填写
   major:  # 专业
   occupation: 学生 # 职位
   map: # 你所在位置的地图
-    light: https://www.helloimg.com/i/2025/08/26/68ad76ae746ab.jpg # 白天
-    dark: https://www.helloimg.com/i/2025/08/26/68ad76ae746ab.jpg # 夜晚
+    light: https://s21.ax1x.com/2025/10/03/pVTgqjP.md.jpg # 白天
+    dark: https://s21.ax1x.com/2025/10/03/pVTgqjP.md.jpg # 夜晚
 
 
 
