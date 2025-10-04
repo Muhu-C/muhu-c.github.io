@@ -1,18 +1,16 @@
 import os
 import datetime
 import re
-import glob
 
 openFile = "NONE"
 
 os.system("chcp 65001 & cls")
 
 def get_multiple_inputs(prompt):
-    """获取多项输入，每行一项，空行结束"""
     print(prompt)
     items = []
     while True:
-        item = input(f"第 {len(items)+1} 项（直接回车结束）: ").strip()
+        item = input(f"第 {len(items)+1} 项: ").strip()
         if not item:
             break
         items.append(item)
@@ -42,14 +40,11 @@ def publish_draft():
             print("无效的选择！")
             return
         
-        selected_draft = draft_files[selection]
-        draft_path = os.path.join(drafts_dir, selected_draft)
-        
         # 使用 hexo publish 命令发布草稿
-        result = os.system(f'hexo publish "{selected_draft}"')
+        result = os.system(f'hexo publish "{draft_files[selection].split(".md")[0]}"')
         
         if result == 0:
-            print(f"草稿 '{selected_draft}' 已成功发布！")
+            print(f"草稿 '{draft_files[selection]}' 已成功发布！")
         else:
             print("发布失败，请检查 Hexo 环境")
             
@@ -68,10 +63,15 @@ def newcontent():
         for filename in os.listdir("scaffolds"):
             mdtypes.append(filename.split(".md")[0])
         mdtypes.remove("page")
-        print("新建 Markdown 文章")
+        print("新建文章")
 
         for ind, mdtype in enumerate(mdtypes):
-            print(ind+1,". ",mdtype, sep="")
+            if mdtype == "draft":
+                print(ind+1,". 草稿", sep="")
+            elif mdtype == "post":
+                print(ind+1,". 文章", sep="")
+            else:
+                print(ind+1,". ",mdtype, sep="")
         sel_mdtype = int(input("请输入文章类型: ")) - 1
         
         if sel_mdtype < 0 or sel_mdtype >= len(mdtypes):
@@ -93,7 +93,7 @@ def newcontent():
         print("\n=== 输入分类 ===")
         categories = get_multiple_inputs("请输入分类（每行一个分类，直接回车结束）：")
         
-        cover = input("\n请输入封面图片链接（可选）: ")
+        cover = input("\n请输入封面图片链接: ")
         
         # 使用 hexo 命令创建文章
         print(f"正在创建 {selected_type} 类型的文章: {file_title}")
@@ -299,9 +299,7 @@ def newcontent():
                 elif field in ["link", "location"]:
                     new_lines.append(f"  {field}: {value}\n")
         
-        # 写入文件（追加模式）
         with open(brevity_file, 'a', encoding='utf-8') as f:
-            # 如果文件不为空且最后一行不是空行，先添加一个空行
             if existing_content and not existing_content[-1].strip() == '':
                 f.write('\n')
             f.writelines(new_lines)
@@ -310,7 +308,6 @@ def newcontent():
         openFile = brevity_file
     
     elif newtype == 3:
-        # 发布草稿
         publish_draft()
             
     else:
