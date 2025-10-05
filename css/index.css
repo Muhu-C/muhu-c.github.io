@@ -196,6 +196,31 @@
   font-size: inherit;
   letter-spacing: normal;
 }
+.spoiler.blur-text {
+  filter: blur(3px) !important;
+  padding: 5px;
+  cursor: default;
+  user-select: none !important;
+  transition: filter 0.4s ease 0.15s;
+}
+.spoiler.blur-text:hover,
+.spoiler.blur-text:focus {
+  user-select: auto !important;
+  filter: blur(0) !important;
+}
+.spoiler.block-text {
+  background-color: var(--efu-fontcolor) !important;
+  color: transparent !important;
+  cursor: default;
+  user-select: none !important;
+  transition: background-color 0.4s ease 0.15s, color 0.3s ease 0.15s;
+}
+.spoiler.block-text:hover,
+.spoiler.block-text:focus {
+  color: inherit !important;
+  user-select: auto !important;
+  background-color: transparent !important;
+}
 .red {
   color: var(--efu-red);
 }
