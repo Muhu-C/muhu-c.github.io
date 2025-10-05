@@ -9441,7 +9441,7 @@ span.tags-punctuation {
   display: box;
   display: flex;
 }
-@media screen and (min-width: 1201px) {
+@media screen and (min-width: 1200px) {
   #bannerGroup {
     -webkit-box-flex: 1;
     -moz-box-flex: 1;
@@ -11019,7 +11019,8 @@ i.bber-gotobb {
   margin-right: 8px;
 }
 #bber .bber-info .bber-info-time,
-#bber .bber-info .bber-info-location {
+#bber .bber-info .bber-info-location,
+#bber .bber-info .bber-info-status {
   margin-right: 0.5rem;
   color: var(--efu-fontcolor);
   font-size: 0.7rem;
@@ -11041,12 +11042,14 @@ i.bber-gotobb {
   align-items: center;
 }
 #bber .bber-info .bber-info-time i,
-#bber .bber-info .bber-info-location i {
+#bber .bber-info .bber-info-location i,
+#bber .bber-info .bber-info-status i {
   margin-right: 8px;
   font-size: 16px;
 }
 #bber .bber-info .bber-info-time .datafrom,
-#bber .bber-info .bber-info-location .datafrom {
+#bber .bber-info .bber-info-location .datafrom,
+#bber .bber-info .bber-info-status .datafrom {
   -webkit-box-ordinal-group: 2;
   -moz-box-ordinal-group: 2;
   -o-box-ordinal-group: 2;
@@ -11058,7 +11061,8 @@ i.bber-gotobb {
   margin-left: 8px;
 }
 #bber .bber-info .bber-info-time .datafrom small,
-#bber .bber-info .bber-info-location .datafrom small {
+#bber .bber-info .bber-info-location .datafrom small,
+#bber .bber-info .bber-info-status .datafrom small {
   font-size: 0.7rem;
 }
 #bber .bber-info .bber-content-link {
@@ -14657,10 +14661,8 @@ div#banners {
   -ms-animation: slide-in 0.6s 0.1s backwards;
   animation: slide-in 0.6s 0.1s backwards;
 }
-@media screen and (max-width: 1200px) {
-  #home_top div#banners {
-    height: calc(328px + 0.5rem);
-  }
+#home_top div#banners {
+  height: calc(328px + 0.5rem);
 }
 :not(.flink)div#banners:hover {
   -webkit-box-shadow: var(--efu-shadow-main);

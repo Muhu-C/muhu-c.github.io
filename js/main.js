@@ -977,6 +977,8 @@ window.refreshFn = () => {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
+  let darkModeText = document.querySelector('.menu-darkmode-text');
+  darkModeText.textContent = document.documentElement.getAttribute("data-theme") === "dark" ? GLOBAL_CONFIG.right_menu.mode.light : GLOBAL_CONFIG.right_menu.mode.dark;
   [
     addCopyright,
     window.refreshFn,
