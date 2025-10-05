@@ -21,10 +21,11 @@ cover: https://s21.ax1x.com/2025/10/01/pVTukcT.md.png
 - **Umami** 是一个网站访问统计系统，可以自行部署，也可以用 **Vercel + Cloudflare Workers** 部署。 
 
 {% note 'warn' 'fas fa-triangle-exclamation' %}
-由于 Vercel 和 Cloudflare Workers 在国内难以访问，因此国内选择本地部署 + Frp 内网穿透更好。   
+由于 Vercel 直接提供的地址和 Cloudflare Workers 在国内难以访问，因此国内选择本地部署 + Frp 内网穿透更好。   
+Vercel 连接自己的域名的确可以访问，本文章暂不叙述此内容。
 {% endnote %}
 
-|  Cloudflare  | Vercel  |
+|  Cloudflare  |  Vercel 直接提供的地址  |
 | :----: | :----: |
 | ![访问情况](https://s21.ax1x.com/2025/09/21/pV4cjds.md.png)  | ![访问情况](https://s21.ax1x.com/2025/09/21/pV4cXZj.md.png)  |
   

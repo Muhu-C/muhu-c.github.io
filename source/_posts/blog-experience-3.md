@@ -10,6 +10,7 @@ cover: https://s21.ax1x.com/2025/10/01/pVTukcT.md.png
 ## 前言
 
 ### 提示  
+- **本文有非常重要的内容：Umami 在静态网站上无中转直接读取 API 并显示数据**
 - 此过程包含不少访问国外网站的要求，如无法访问，请使用 [Watt Toolkit](https://steampp.net/) 等加速软件。  
 - 若有**公网 IP 服务器**，可以直接把 SSL 证书添加到 Nginx 反向代理中进行访问，详见 **第一步 配置 Nginx**  
 - 本文章为 Solitude 主题的配置提供方法，因此从 Solitude 派生的其他主题都可使用此方法，若主题不是 Solitude 且没有内置的 Umami 统计显示，请自行修改网页代码！*（博主通过自己的文件、AI 以及其他教程摸索出了 Solitude 主题下的网站结构）*  
