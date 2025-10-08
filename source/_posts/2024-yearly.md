@@ -5,7 +5,7 @@ tags:
     - 生活
     - 成长之路
 categories: 生活
-cover: https://www.helloimg.com/i/2025/08/27/68ae677d1d48f.jpg
+cover: https://s21.ax1x.com/2025/10/08/pV7OhjK.md.jpg
 ---
 *第一次年度总结. 本文章相比旧博客略有修改.*  
   

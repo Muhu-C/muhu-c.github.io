@@ -69,15 +69,19 @@ careers:
     - school: Python
       major: 学习
       timespan: 2021 ~ 2022
-      color: "#357ef5"
+      color: "#a5eef5"
     - school: C++
       major: 学习
       timespan: 2022 ~ 2024
-      color: "#256ee5"
+      color: "#85cee5"
     - school: C#
       major: 自学并创建项目
       timespan: 2023 ~ 现在
-      color: "#155ed5"
+      color: "#65aed5"
+    - school: HTML、CSS、JS
+      major: 自学摸索
+      timespan: 2025 ~ 现在
+      color: "#458ed5"
 
 
 # 性格模块

@@ -5,7 +5,7 @@ tags: 公告
 categories: 生活
 top: true
 sticky: 1
-cover: https://upload-bbs.miyoushe.com/upload/2025/08/29/75276539/21c8ab927ff8b1b661d9ebc05792e3f4_6208678627466918283.jpg
+cover: https://s21.ax1x.com/2025/10/08/pV7OQ6f.md.jpg
 ---
 
 ### 账号  

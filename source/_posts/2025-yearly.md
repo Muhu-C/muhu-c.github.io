@@ -5,7 +5,7 @@ tags:
     - 生活
     - 成长之路
 categories: 生活
-cover: https://www.helloimg.com/i/2025/08/27/68ae677f5d09d.jpg
+cover: https://s21.ax1x.com/2025/10/08/pV7Ofc6.md.jpg
 ---
 
 时光如流水般消逝，转眼间又过去了一年。这一年，我经历了很多。<br/><br/>  

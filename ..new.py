@@ -16,9 +16,9 @@ def get_multiple_inputs(prompt):
 
 def format_brevity_content(content):
     """格式化即刻essay_type内容：转换换行和加粗"""
-    # 将 **text** 转换为 <b>text</b>
-    content = re.sub(r'\*\*(.*?)\*\*', r'<b>\1</b>', content)
-    content = re.sub(r'\*(.*?)\*', r'<i>\1</i>', content)
+    # 将 **text** 转换为 <strong>text</strong>
+    content = re.sub(r'\*\*(.*?)\*\*', r'<strong>\1</strong>', content)
+    content = re.sub(r'\*(.*?)\*', r'<em>\1</em>', content)
     # 将换行符转换为 <br />
     content = content.replace('\n', '<br />')
     return content
