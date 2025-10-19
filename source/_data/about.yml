@@ -41,9 +41,9 @@ skills: # 根据需求添加
     - title: Musescore
       color: "#fff"
       img: https://musescore.org/themes/musescore_theme/images/custom-warning/warning-logo.jpg
-    - title: Bilibili
-      color: "#105"
-      img: https://s1.aigei.com/src/img/png/b3/b3f429d07908487097e53c1d528b0814.png?imageMogr2/auto-orient/thumbnail/!282x282r/gravity/Center/crop/282x282/quality/85/%7CimageView2/2/w/282&e=2051020800&token=P7S2Xpzfz11vAkASLTkfHN7Fw-oOZBecqeJaxypL:CRQVRvCFCm-RMsZ3XeZ_lmtcq2w=
+    - title: Arduino
+      color: "#f4f4f4"
+      img: https://www.nicepng.com/png/detail/207-2079566_arduino-1-logo-png-transparent-arduino-logo-png.png
     - title: Python
       color: "#acf"
       icon: fab fa-python
