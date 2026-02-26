@@ -128,10 +128,10 @@ game:
     subtitle: Genshin Impact
     box_shadow: "0 -69px 203px 11px #04120f inset"
     #icon_group:
-    #  - https://7.isyangs.cn/66/6738b472ce11f-66.webp
+    #  - https://upload-bbs.miyoushe.com/upload/2026/02/25/340946548/bce4a90c3d64ab1933451a74187bffad_5984425768052151448.jpg?x-oss-process=image/resize,s_400,l_16000/auto-orient,0/interlace,1/quality,q_70/format,webp
     #  - https://solitude.js.org/example.png
-    tips_left: 目前只玩的
-    tips_right: "官服冒险等阶: 58"
+    tips_left: 厨小提、娜维娅、小杜林
+    tips_right: "官服冒险等阶: 59"
   - title: 爱好
     img: https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Global-Header_Image-Tile_MC-Java-Bedrock_570x321.jpg
     subtitle: Minecraft
