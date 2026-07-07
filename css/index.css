@@ -1,4 +1,11 @@
 @charset "UTF-8";
+
+:root {
+  --solitude-tag-main: var(--efu-main, #4c97ff);
+  --solitude-tag-text: var(--efu-fontcolor, #1f2937);
+  --solitude-tag-bg: var(--efu-card-bg, #ffffff);
+  --solitude-tag-border: var(--efu-card-border, rgba(0, 0, 0, 0.08));
+}
 .article-container a.tag-link {
   background: var(--efu-secondbg);
   border-radius: 8px !important;
@@ -220,6 +227,19 @@
   color: inherit !important;
   user-select: auto !important;
   background-color: transparent !important;
+}
+:root {
+  --solitude-tag-main: var(--efu-main, #4c97ff);
+  --solitude-tag-text: var(--efu-fontcolor, #1f2937);
+  --solitude-tag-bg: var(--efu-card-bg, #fff);
+  --solitude-tag-border: var(--efu-card-border, rgba(0,0,0,0.08));
+}
+.muhu-tag-compat {
+  color: var(--solitude-tag-text);
+  background: var(--solitude-tag-bg);
+  border: 1px solid var(--solitude-tag-border);
+  border-radius: 12px;
+  box-shadow: none;
 }
 .red {
   color: var(--efu-red);
