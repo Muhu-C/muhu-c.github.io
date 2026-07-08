@@ -6687,7 +6687,7 @@ span.tags-punctuation i {
   }
 }
 #page-header #nav {
-  z-index: 100;
+  z-index: 1005;
   -webkit-box-shadow: none;
   box-shadow: none;
   -webkit-transition: 0.3s;
