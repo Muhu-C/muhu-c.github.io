@@ -5,7 +5,7 @@ tags:
     - 生活
     - 成长之路
 categories: 生活
-cover: https://s21.ax1x.com/2025/10/08/pV7Ofc6.md.jpg
+cover: https://cnb.cool/muhu-group/tuc/-/git/raw/main/2025.jpg
 ---
 
 时光如流水般消逝，转眼间又过去了一年。这一年，我经历了很多。<br/><br/>  
@@ -28,7 +28,7 @@ cover: https://s21.ax1x.com/2025/10/08/pV7Ofc6.md.jpg
 失常的发挥让我把二三十分丢到了记忆深处。  
 后来，在志愿填报和录取分数线的双重“减”持下，阴差阳错地滑到了志愿填报的最后一个学校，也是距离我家最近、骑车只需要 15 分钟的一所高中。  
   
-![录取学校](https://www.helloimg.com/i/2025/08/27/68ae4e0253ec6.png)  
+![录取学校](https://cnb.cool/muhu-group/tuc/-/git/raw/main/2025-yearly/0.png)  
   
 不知是厄运还是幸运，考到这所高中虽然不及市中心的学校，但仍然是四星高中，且不用住宿，每天都可以回到熟悉的家。  <br/><br/>  
   
@@ -39,7 +39,7 @@ cover: https://s21.ax1x.com/2025/10/08/pV7Ofc6.md.jpg
 我编程与学习的梦想不能止于此。  
   
 对未来不远的高考，我的梦想是考上西北工业大学。我深知这个梦想难以实现，但我一定要在高中三年拼一把！  
-![到西北工业大学参观买的 U 盘](https://www.helloimg.com/i/2025/08/27/68ae548daa198.jpg)  
+![到西北工业大学参观买的 U 盘](https://cnb.cool/muhu-group/tuc/-/git/raw/main/2025-yearly/1.jpg)  
   
 对于这三年的编程，我会在假期空闲中继续完成我的软件：木沪时间表。  
 {% link '木沪时间表 2' '一款简洁、美观的时间计划软件' 'https://github.com/Muhu-C/DateTimer2/' %}  

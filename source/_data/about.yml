@@ -131,22 +131,22 @@ game:
     #  - https://upload-bbs.miyoushe.com/upload/2026/02/25/340946548/bce4a90c3d64ab1933451a74187bffad_5984425768052151448.jpg?x-oss-process=image/resize,s_400,l_16000/auto-orient,0/interlace,1/quality,q_70/format,webp
     #  - https://solitude.js.org/example.png
     tips_left: 于林间立身，以玫芒为心，以星火为念。
-    tips_right: "官服冒险等阶: 59"
+    tips_right: "官服冒险等阶: 60"
   - title: 爱好
     img: https://www.minecraft.net/content/dam/minecraftnet/games/minecraft/key-art/Global-Header_Image-Tile_MC-Java-Bedrock_570x321.jpg
     subtitle: Minecraft
     #box_shadow: "0 -69px 203px 11px #415dc9 inset"
-    tips_right: "Java 1.16.5/1.18.2"
+    tips_right: "Java 1.16.5/1.18.2 暂时退坑"
 
 # 爱好模块
 likes:
   - type: like-technology
-    bg: https://s21.ax1x.com/2025/10/03/pVTgH1I.md.jpg
+    bg: https://cnb.cool/muhu-group/tuc/-/git/raw/main/about-1.jpg
     tips: 爱好
     title: 音乐&计算机
     subtips: 
   - type: like-music
-    bg: https://s21.ax1x.com/2025/10/03/pVTgbct.md.jpg
+    bg: https://cnb.cool/muhu-group/tuc/-/git/raw/main/about-2.png
     tips: 音乐偏好
     title: 纯音乐、C418、HOYO-MiX
     subtips: 
@@ -157,7 +157,7 @@ likes:
 # 网站统计数据展示模块
 tj: # 统计
   provider: umami # 51la / umami / custom
-  img: https://s21.ax1x.com/2025/09/14/pVWzPPK.jpg # 背景
+  img: https://cnb.cool/muhu-group/tuc/-/git/raw/main/about-3.png # 背景
   desc: 使用自建统计，于 2025/10/2 换源！ # 提示
   # Umami 统计
   umami:
@@ -174,8 +174,8 @@ oneself: # 按需填写
   major:  # 专业
   occupation: 学生 # 职位
   map: # 你所在位置的地图
-    light: https://s21.ax1x.com/2025/10/03/pVTgqjP.md.jpg # 白天
-    dark: https://s21.ax1x.com/2025/10/03/pVTgqjP.md.jpg # 夜晚
+    light: https://cnb.cool/muhu-group/tuc/-/git/raw/main/about-4.png # 白天
+    dark: https://cnb.cool/muhu-group/tuc/-/git/raw/main/about-4.png # 夜晚
 
 
 

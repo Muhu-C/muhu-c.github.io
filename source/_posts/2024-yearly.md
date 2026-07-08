@@ -5,7 +5,7 @@ tags:
     - 生活
     - 成长之路
 categories: 生活
-cover: https://s21.ax1x.com/2025/10/08/pV7OhjK.md.jpg
+cover: https://cnb.cool/muhu-group/tuc/-/git/raw/main/2024.jpg
 ---
 *第一次年度总结. 本文章相比旧博客略有修改.*  
   

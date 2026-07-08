@@ -7,7 +7,7 @@ tags:
   - 编程
 categories:
   - 编程
-cover: https://s21.ax1x.com/2025/10/05/pV7kFYT.md.jpg
+cover: https://cnb.cool/muhu-group/tuc/-/git/raw/main/solitude.jpg
 ---
 
 ## 写在开头  
@@ -24,7 +24,7 @@ Github: [commit *3d8adb3* & *165474e*](https://github.com/Muhu-C/MuhuTheme/commi
 
 Github: [commit 6ccc164](https://github.com/Muhu-C/MuhuTheme/commit/6ccc1649a35b09ce4e1e1a2a720ba4ba6d1a8267)  
 
-![日历](https://s21.ax1x.com/2025/10/05/pV7A7Pf.png)  
+![日历](https://cnb.cool/muhu-group/tuc/-/git/raw/main/solitude-changes/0.png)  
 
 ### 三、修复主页宽度变化时发生的样式 Bug 并优化主页 home-top 按钮显示
 
@@ -39,12 +39,12 @@ Github: commit
 
 | 修复前（一瞬间出现的 Bug） | 修复后 |
 | -----  | ----- |
-| ![Bug 高度异常](https://s21.ax1x.com/2025/10/05/pV7AxZn.md.png) | ![修复后](https://s21.ax1x.com/2025/10/05/pV7ESI0.md.png) |
+| ![Bug 高度异常](https://cnb.cool/muhu-group/tuc/-/git/raw/main/solitude-changes/1.png) | ![修复后](https://cnb.cool/muhu-group/tuc/-/git/raw/main/solitude-changes/2.png) |
 
 <!-- endtab -->
 <!-- tab 布局优化 @fas fa-tag -->
 
-![布局优化](https://s21.ax1x.com/2025/10/05/pV7EPRU.png)
+![布局优化](https://cnb.cool/muhu-group/tuc/-/git/raw/main/solitude-changes/3.png)
 
 <!-- endtab -->
 {% endtabs %}
@@ -61,12 +61,12 @@ Github: [commit a8cd2da](https://github.com/Muhu-C/MuhuTheme/commit/a8cd2dad13c9
 
 | 修复前 | 修复后 |
 | -----  | ----- |
-| ![Bug 右键菜单异常](https://s21.ax1x.com/2025/10/05/pV7EaJf.png) | ![修复后](https://s21.ax1x.com/2025/10/05/pV7AHG8.png) |
+| ![Bug 右键菜单异常](https://cnb.cool/muhu-group/tuc/-/git/raw/main/solitude-changes/4.png) | ![修复后](https://cnb.cool/muhu-group/tuc/-/git/raw/main/solitude-changes/5.png) |
 
 ### 添加是否在主页显示即刻短文的功能
 
 Github: [commit a8cd2da](https://github.com/Muhu-C/MuhuTheme/commit/a8cd2dad13c9399fcc7658c3ab3867dd1275d128)  
 
-![功能展示](https://free.picui.cn/free/2025/10/05/68e209444e34c.png)
+![功能展示](https://cnb.cool/muhu-group/tuc/-/git/raw/main/solitude-changes/6.png)
 
 若有其他功能建议以及浏览中的问题，希望大家及时提议或指出。

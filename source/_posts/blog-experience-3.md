@@ -5,7 +5,7 @@ tags:
     - 成长之路
     - 教程
 categories: 学习
-cover: https://s21.ax1x.com/2025/10/01/pVTukcT.md.png
+cover: https://cnb.cool/muhu-group/tuc/-/git/raw/main/hexo.png
 ---
 ## 前言
 
