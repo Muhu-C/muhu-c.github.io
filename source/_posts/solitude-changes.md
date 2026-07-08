@@ -69,4 +69,10 @@ Github: [commit a8cd2da](https://github.com/Muhu-C/MuhuTheme/commit/a8cd2dad13c9
 
 ![功能展示](https://cnb.cool/muhu-group/tuc/-/git/raw/main/solitude-changes/6.png)
 
-若有其他功能建议以及浏览中的问题，希望大家及时提议或指出。
+### 修复特定情况下文章页面中，标题块底部覆盖顶栏的问题  
+  
+Github: commit  
+- [32cf81f](https://github.com/Muhu-C/MuhuTheme/commit/32cf81f97900124f5d17ec3fda6d4a35d04d27b0)  
+- [06ef3b0](https://github.com/Muhu-C/MuhuTheme/commit/06ef3b0c2c44a09f546ed8c51e70873fdfd8ab18)  
+  
+若有其他功能建议以及浏览中的问题，希望大家及时提议或指出。  
