@@ -6,3 +6,5 @@ node_modules/*
 !node_modules/hexo-theme-solitude/
 public/
 .deploy*/
+..new.py
+format.py
