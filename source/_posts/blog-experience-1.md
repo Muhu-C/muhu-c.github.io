@@ -5,7 +5,7 @@ tags:
     - 成长之路
     - 教程
 categories: 学习
-cover: https://cnb.cool/muhu-group/tuc/-/git/raw/main/hexo.png
+cover: https://pic.mc118cn.cn/images/hexo.png
 ---
 *本文章相比旧博客略有修改.*   
 *本文章原本为教程文章，可以按作者的步骤学习。*  
@@ -40,7 +40,7 @@ cover: https://cnb.cool/muhu-group/tuc/-/git/raw/main/hexo.png
 1. 进入 [Github](https://github.com/) 网站后，点击 Sign Up (注册) 注册账号
 2. 根据网站提示注册完成
 3. 点击上方栏中加号，选择新建存储库 (New repository)， Owner 旁边存储库名必须为 “[账户名].github.io” 才能建立网站，新建仓库完成。  
-![新建仓库](https://cnb.cool/muhu-group/tuc/-/git/raw/main/blog-experience-1/0.png)  
+![新建仓库](https://pic.mc118cn.cn/images/blog-experience-1/0.png)  
 
 
 ## 第二步 配置
@@ -165,7 +165,7 @@ timezone: 'Asia/Shanghai'
 ```
 
 从下图示例位置(你的存储库中点击 Code -> Local -> SSH 复制)  
-![获取 SSH git](https://cnb.cool/muhu-group/tuc/-/git/raw/main/blog-experience-1/1.png)  
+![获取 SSH git](https://pic.mc118cn.cn/images/blog-experience-1/1.png)  
 找到 ***#Depolyment*** 部分，配置如下
 
 ```YAML

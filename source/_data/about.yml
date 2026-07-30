@@ -141,12 +141,12 @@ game:
 # 爱好模块
 likes:
   - type: like-technology
-    bg: https://cnb.cool/muhu-group/tuc/-/git/raw/main/about-1.jpg
+    bg: https://pic.mc118cn.cn/images/about-1.jpg
     tips: 爱好
     title: 音乐&计算机
     subtips: 
   - type: like-music
-    bg: https://cnb.cool/muhu-group/tuc/-/git/raw/main/about-2.png
+    bg: https://pic.mc118cn.cn/images/about-2.png
     tips: 音乐偏好
     title: 纯音乐、C418、HOYO-MiX
     subtips: 
@@ -157,7 +157,7 @@ likes:
 # 网站统计数据展示模块
 tj: # 统计
   provider: umami # 51la / umami / custom
-  img: https://cnb.cool/muhu-group/tuc/-/git/raw/main/about-3.png # 背景
+  img: https://pic.mc118cn.cn/images/about-3.png # 背景
   desc: 使用自建统计，于 2025/10/2 换源！ # 提示
   # Umami 统计
   umami:
@@ -174,8 +174,8 @@ oneself: # 按需填写
   major:  # 专业
   occupation: 学生 # 职位
   map: # 你所在位置的地图
-    light: https://cnb.cool/muhu-group/tuc/-/git/raw/main/about-4.png # 白天
-    dark: https://cnb.cool/muhu-group/tuc/-/git/raw/main/about-4.png # 夜晚
+    light: https://pic.mc118cn.cn/images/about-4.png # 白天
+    dark: https://pic.mc118cn.cn/images/about-4.png # 夜晚
 
 
 

@@ -5,7 +5,7 @@ tags:
     - 成长之路
     - 教程
 categories: 学习
-cover: https://cnb.cool/muhu-group/tuc/-/git/raw/main/hexo.png
+cover: https://pic.mc118cn.cn/images/hexo.png
 ---
   
 *本文章是教程文章，可以按作者的步骤学习。*  
@@ -27,7 +27,7 @@ Vercel 连接自己的域名的确可以访问，本文章暂不叙述此内容�
 
 |  Cloudflare  |  Vercel 直接提供的地址  |
 | :----: | :----: |
-| ![访问情况](https://cnb.cool/muhu-group/tuc/-/git/raw/main/blog-experience-2/cf.png)  | ![访问情况](https://cnb.cool/muhu-group/tuc/-/git/raw/main/blog-experience-2/vc.png)  |
+| ![访问情况](https://pic.mc118cn.cn/images/blog-experience-2/cf.png)  | ![访问情况](https://pic.mc118cn.cn/images/blog-experience-2/vc.png)  |
   
   
 ### 提示  
@@ -255,7 +255,7 @@ sudo systemctl disable umami
 或者，如果该主机没有桌面 UI，可使用 **内网其他设备** 访问  
 {% endnote %}
 
-![打开 Umami 本地网站后的画面](https://cnb.cool/muhu-group/tuc/-/git/raw/main/blog-experience-2/0.png)  
+![打开 Umami 本地网站后的画面](https://pic.mc118cn.cn/images/blog-experience-2/0.png)  
 
 完成后，填入默认用户名 `admin` 和 默认密码 `umami` ，登录后建议转到 `Settings/Users` 点击 `Edit` 更改密码。  
 
@@ -263,7 +263,7 @@ sudo systemctl disable umami
 
 转到 `Settings/Websites`，点击 `Add Website`。Name 任意填写，Domain 填写你网站的域名。  
 
-![创建网站统计](https://cnb.cool/muhu-group/tuc/-/git/raw/main/blog-experience-2/1.png)
+![创建网站统计](https://pic.mc118cn.cn/images/blog-experience-2/1.png)
 
 ## 第四步 使用 Umami API
 

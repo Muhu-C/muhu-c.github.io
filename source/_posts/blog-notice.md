@@ -5,7 +5,7 @@ tags: 公告
 categories: 生活
 top: true
 sticky: 1
-cover: https://cnb.cool/muhu-group/tuc/-/git/raw/main/notice.jpg
+cover: https://pic.mc118cn.cn/images/notice.jpg
 ---
 
 ### 账号  

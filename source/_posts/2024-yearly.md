@@ -5,7 +5,7 @@ tags:
     - 生活
     - 成长之路
 categories: 生活
-cover: https://cnb.cool/muhu-group/tuc/-/git/raw/main/2024.jpg
+cover: https://pic.mc118cn.cn/images/2024.jpg
 ---
 *第一次年度总结. 本文章相比旧博客略有修改.*  
   

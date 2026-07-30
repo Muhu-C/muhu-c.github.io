@@ -5,7 +5,7 @@ tags:
   - 编程
 categories:
   - 编程
-cover: https://cnb.cool/muhu-group/tuc/-/git/raw/main/dt2-un.png
+cover: https://pic.mc118cn.cn/images/dt2-un.jpg
 ---
 ### 停止更新说明  
 由于以下原因，作者停止更新此软件：  

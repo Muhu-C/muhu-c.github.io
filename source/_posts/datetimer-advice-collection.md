@@ -5,7 +5,7 @@ tags:
   - 编程
 categories:
   - 编程
-cover: https://cnb.cool/muhu-group/tuc/-/git/raw/main/collection.jpg
+cover: https://pic.mc118cn.cn/images/collection.jpg
 date: 2025-10-03 21:49:01
 ---
 
