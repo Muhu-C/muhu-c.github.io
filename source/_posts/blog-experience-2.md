@@ -3,6 +3,7 @@ title: 记自己建立博客的曲折历程（二）
 date: 2025-08-30 15:12:21
 tags: 
     - 成长之路
+    - 经验
     - 教程
 categories: 学习
 cover: https://pic.mc118cn.cn/images/hexo.png
