@@ -4406,7 +4406,8 @@ span.tags-punctuation i {
   }
 }
 @media screen and (max-width: 1199px) {
-  #aside-content .card-widget:not(#card-toc) {
+  #aside-content .card-widget:not(#card-toc),
+  #aside-content .calendar-widget {
     display: none;
   }
 }
