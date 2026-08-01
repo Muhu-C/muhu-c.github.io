@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_图层_1" data-name="图层 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 1920">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #4d4d4d;
+      }
+
+      .cls-2 {
+        fill: #666;
+      }
+
+      .cls-3 {
+        fill: #333;
+      }
+
+      .cls-4 {
+        fill: #1a1a1a;
+      }
+
+      .cls-5 {
+        fill: #ccc;
+      }
+
+      .cls-6 {
+        fill: #e6e6e6;
+      }
+    </style>
+  </defs>
+  <path class="cls-1" d="M1392,1920H48c-26.51,0-48-21.49-48-48V72C0,32.24,32.24,0,72,0h1320c26.51,0,48,21.49,48,48v1824c0,26.51-21.49,48-48,48Z"/>
+  <rect class="cls-5" x="60" y="60" width="1320" height="1800" rx="24" ry="24"/>
+  <rect class="cls-1" width="112" height="1920"/>
+  <rect class="cls-3" x="693" y="466.5" width="110" height="200"/>
+  <circle class="cls-2" cx="746" cy="1066" r="450"/>
+  <circle class="cls-6" cx="746" cy="1067" r="400"/>
+  <circle class="cls-4" cx="746" cy="1066" r="40"/>
+  <path class="cls-4" d="M745.5,729h2c11.04,0,20,8.96,20,20v320h-42v-320c0-11.04,8.96-20,20-20Z"/>
+  <path class="cls-4" d="M838.14,995.11h9.2c11.04,0,20,8.96,20,20v231.6h-49.2v-231.6c0-11.04,8.96-20,20-20Z" transform="translate(2234.85 951.53) rotate(120)"/>
+  <rect class="cls-3" x="467" y="404" width="556" height="80" rx="32" ry="32"/>
+</svg>
