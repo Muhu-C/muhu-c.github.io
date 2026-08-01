@@ -28,7 +28,7 @@
     "hexo-theme-solitude": "^3.0.20",
     "hexo-wordcount": "^6.0.1",
     "katex": "^0.16.22",
-    "pug": "^3.0.3",
+    "pug": "^3.0.4",
     "stylus": "^0.64.0"
   },
   "description": "",
