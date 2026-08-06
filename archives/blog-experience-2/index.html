@@ -1,0 +1,593 @@
+<!DOCTYPE html><html lang="zh_CN" data-theme="light"><head><!-- hexo injector head_begin start -->
+    <script>
+      window.MUHUTHEME_CONFIG = {
+        version: "1.1.0"
+      };
+    </script>
+    <!-- hexo injector head_begin end --><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>记自己建立博客的曲折历程（二） | MC118CN 的博客</title><noscript>开启JavaScript才能访问本站哦~</noscript><link rel="icon" href="/img/favicon.ico"><link rel="stylesheet" href="/css/index.css?v=1.1.0"><link rel="canonical" href="https://blog.mc118cn.cn/archives/blog-experience-2/index.html"><link rel="stylesheet" href="https://cdn.jsdmirror.cn/npm/@fortawesome/fontawesome-free@6.7.2/css/all.min.css"><!-- Feature-specific CSS--><!-- aplayer--><link rel="stylesheet" href="https://cdn.jsdmirror.cn/npm/aplayer@1.10.1/dist/APlayer.min.css"><!-- swiper--><link rel="stylesheet" href="https://cdn.jsdmirror.cn/npm/swiper@11.0.5/swiper-bundle.min.css"><!-- fancybox ui--><link rel="stylesheet" href="https://cdn.jsdmirror.cn/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.min.css"><!-- katex--><link rel="stylesheet" href="https://cdn.jsdmirror.cn/npm/katex@0.16.9/dist/katex.min.css"><!-- Open Graph--><meta name="description" content="本文章是教程文章，可以按作者的步骤学习。 前言 介绍 公网(外网) 即广域网，指的是公共网络，规模大，用户可以在不同地区访问公网的内容。 内网 即局域网，规模一般在方圆几千米以内。正常情况下，家里的网络都是内网。内网里的设备可以访问内网的内容。如果内网的设备没有公网 IP，在公网上则无法访问内网"><!-- pwa--><meta name="apple-mobile-web-app-capable" content="MC118CN 的博客"><meta name="theme-color" content="var(--efu-main)"><meta name="apple-mobile-web-app-status-bar-style" content="var(--efu-main)"><link rel="bookmark" href="/img/favicon.ico"><link rel="apple-touch-icon" href="/img/favicon.ico" sizes="180x180"><script>console.log(' %c MuhuTheme adapted from Solitude 4 %c ' + '1.1.0' + ' %c https://github.com/everfu/hexo-theme-solitude',
+    'background:#35495e ; padding: 1px; border-radius: 3px 0 0 3px;  color: #fff',
+    'background:#ff9a9a ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff',
+    'background:unset ; padding: 1px; border-radius: 0 3px 3px 0;  color: #fff')
+</script><script>let mdate = "7-7,9-18,12-13,5-12";
+mdate = (mdate.split(","));
+let ndate = new Date();
+for (let i of mdate) {
+    if (i === (ndate.getMonth()+1) + "-" + (ndate.getDate())) {
+        document.documentElement.classList.add('memorial');
+    }
+}
+</script><script src="https://cdn.jsdmirror.cn/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script><script src="/js/chinese_lunar.js"></script><script src="/js/website_popup.js"></script><link rel="stylesheet" href="https://cdn.jsdmirror.cn/npm/katex@0.16.22/dist/katex.min.css" integrity="sha384-5TcZemv2l/9On385z///+d7MSYlvIEw9FuZTIdZ14vJLqWphw7e7ZPuOiCHJcFCP" crossorigin="anonymous"><script defer src="https://cdn.jsdmirror.cn/npm/katex@0.16.22/dist/katex.min.js" integrity="sha384-cMkvdD8LoxVzGF/RPUKAcvmm49FQ0oxwDF3BGKtDXcEc+T1b2N+teh/OJfpU0jr6" crossorigin="anonymous"></script><script defer src="https://cdn.jsdmirror.cn/npm/katex@0.16.22/dist/contrib/auto-render.min.js" integrity="sha384-hCXGrW6PitJEwbkoStFjeJxv+fSOOQKOPbJxSfM6G5sWZjAyWhXiTIIAmQqnlLlh" crossorigin="anonymous" onload="renderMathInElement(document.body);"></script><script defer src="https://umami.mc118cn.cn/script.js" data-website-id="c5d5834f-a990-455c-822b-49316326702b"></script><script>(()=>{
+        const parseConfig = (id) => {
+            const element = document.getElementById(id)
+            if (!element) return {}
+            try {
+                return JSON.parse(element.content?.textContent || element.textContent || '{}')
+            } catch (error) {
+                console.error('Invalid Solitude config:', error)
+                return {}
+            }
+        }
+        const saveToLocal = {
+            set: function setWithExpiry(key, value, ttl) {
+                if (ttl === 0)
+                    return
+                const now = new Date()
+                const expiryDay = ttl * 86400000
+                const item = {
+                    value: value,
+                    expiry: now.getTime() + expiryDay
+                }
+                localStorage.setItem(key, JSON.stringify(item))
+            },
+            get: function getWithExpiry(key) {
+                const itemStr = localStorage.getItem(key)
+
+                if (!itemStr) {
+                    return undefined
+                }
+                let item
+                try {
+                    item = JSON.parse(itemStr)
+                } catch (error) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                const now = new Date()
+
+                if (now.getTime() > item.expiry) {
+                    localStorage.removeItem(key)
+                    return undefined
+                }
+                return item.value
+            }
+        };
+        const resourceRequests = new Map()
+        const loadResource = (url, create) => {
+            const absoluteUrl = new URL(url, document.baseURI).href
+            if (resourceRequests.has(absoluteUrl)) return resourceRequests.get(absoluteUrl)
+            const request = new Promise((resolve, reject) => {
+                const element = create(absoluteUrl)
+                element.addEventListener('load', () => resolve(element), {once: true})
+                element.addEventListener('error', () => {
+                    resourceRequests.delete(absoluteUrl)
+                    reject(new Error('Unable to load ' + absoluteUrl))
+                }, {once: true})
+                document.head.appendChild(element)
+            })
+            resourceRequests.set(absoluteUrl, request)
+            return request
+        }
+        const api = window.Solitude || {}
+        window.Solitude = api
+        api.installLegacyAdapter = () => {
+            const aliases = {
+                utils: api,
+                sco: api,
+                GLOBAL_CONFIG: api.config
+            }
+            Object.entries(aliases).forEach(([name, value]) => {
+                if (name in window) return
+                Object.defineProperty(window, name, {
+                    configurable: true,
+                    enumerable: false,
+                    value
+                })
+            })
+        }
+        Object.defineProperties(api, {
+            config: {configurable: true, get: () => parseConfig('site-config')},
+            page: {configurable: true, get: () => parseConfig('config-diff')}
+        })
+        Object.assign(api, {
+            saveToLocal: saveToLocal,
+            loadStyle: (url, options = {}) => loadResource(url, href => {
+                const link = document.createElement('link')
+                link.rel = 'stylesheet'
+                link.href = href
+                if (options.id) link.id = options.id
+                return link
+            }),
+            loadScript: (url, options = {}) => {
+              if (url.includes('barrage')) api.installLegacyAdapter()
+              return loadResource(url, src => {
+                const script = document.createElement('script')
+                script.src = src
+                script.async = options.async !== false
+                Object.entries(options.attributes || {}).forEach(([key, value]) => script.setAttribute(key, value))
+                return script
+              })
+            },
+            addGlobalFn: (key, fn, name = false, parent = window) => {
+                const globalFn = parent.globalFn || {}
+                const keyObj = globalFn[key] || {}
+
+                if (name && keyObj[name]) return
+
+                name = name || Object.keys(keyObj).length
+                keyObj[name] = fn
+                globalFn[key] = keyObj
+                parent.globalFn = globalFn
+            },
+            addEventListenerPjax: (ele, event, fn, option = false) => {
+              ele.addEventListener(event, fn, option)
+              api.addGlobalFn('pjax', () => {
+                  ele.removeEventListener(event, fn, option)
+              })
+            },
+            diffDateFormat: (selector) => {
+                selector.forEach(item => {
+                    const date = new Date(item.getAttribute('datetime') || item.textContent);
+                    item.textContent = (date.getMonth() + 1).toString()+'/'+date.getDate().toString();
+                });
+            },
+        })
+        api.getCSS = (url, id = false) => api.loadStyle(url, {id})
+        api.getScript = (url, attr = {}) => api.loadScript(url, {attributes: attr})
+        api.on = (name, handler) => {
+            const eventName = 'solitude:' + name
+            document.addEventListener(eventName, handler)
+            return () => document.removeEventListener(eventName, handler)
+        }
+        api.navigate = url => api.pjax?.loadUrl ? api.pjax.loadUrl(url) : window.location.assign(url)
+    })()</script><!-- theme--><script>initTheme = () => {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const cachedMode = Solitude.saveToLocal.get('theme');
+    if (cachedMode === undefined) {
+        const nowMode =
+            isDarkMode ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', nowMode);
+    } else {
+        document.documentElement.setAttribute('data-theme', cachedMode);
+    }
+    Solitude.rightMenu?.mode(cachedMode === 'dark' && isDarkMode)
+}
+initTheme()</script><template id="site-config">{"root":"/","runtime":"2024-06-02 15:20:26","lazyload":{"enable":true,"error":"/img/ti/a.png"},"copyright":{"limit":50,"author":"作者: MC118CN","link":"链接: ","source":"来源: MC118CN 的博客","info":"著作权归作者所有。 商业转载请联系作者获得授权，非商业转载请注明出处。"},"highlight":{"limit":200,"expand":true,"copy":true,"syntax":"highlight.js"},"friend_links":{"async":false,"path":"/links.json","total":0,"placeholder":"","default_avatar":"/img/default_avatar.avif","more_url":"/links/","loading":"正在加载友链...","error":"友链加载失败，请稍后重试。","retry":"重新加载","random":"点击前往按钮进入随机一个友链，不保证跳转网站的安全性和可用性。本次随机到的是本站友链：⌈ ${name} ⌋","to":"前往","more":"更多","default_sort":"默认排序","random_sort":"随机排序","sort_label":"切换排序方式","scroll_left":"向左滚动","scroll_right":"向右滚动"},"random_posts":["archives/about-netlify/","archives/blog-notice-of-views/","archives/datetimer-2-0-cancel/","archives/perfect-way-for-umami/","archives/solitude-changes/","archives/blog-experience-3/","archives/blog-experience-2/","archives/blog-notice/","archives/2025-yearly/","archives/datetimer-2-0-update/","archives/datetimer-2-0-preview/","archives/2024-yearly/","archives/blog-experience-1/"],"randomlink":false,"feature_modules":{"search":false,"post_ai":false,"friend_links":false,"music":true,"right_menu":true,"translate":true,"covercolor":"local"},"lang":{"theme":{"dark":"已切换至深色模式","light":"已切换至浅色模式"},"copy":{"success":"复制成功","error":"复制失败"},"backtop":"返回顶部","time":{"day":"天前","hour":"小时前","just":"刚刚","min":"分钟前","month":"个月前"},"day":" 天","f12":"开发者模式已打开，请遵循GPL协议。","totalk":"无需删除空行，直接输入评论即可","barrage":{"title":"热评"}},"aside":{"state":{"morning":"新的一天开始了！","noon":"午饭吃饱有力气！","afternoon":"下午好！","night":"劳累的一天过去了，早点休息！","goodnight":"晚安😴"},"witty_words":["感谢您的访问！"],"witty_comment":{"prefix":"好久不见，","back":"欢迎再次回来，"}},"covercolor":{"enable":true,"mode":"local","time":43200000},"comment":{"avatar":"https://gravatar.com/avatar","commentBarrage":true},"lightbox":"fancybox","right_menu":{"mode":{"dark":"深色模式","light":"浅色模式"},"img_error":"此图片无法复制与下载","music":{"start":"播放音乐","stop":"暂停音乐"},"barrage":{"open":"显示热评","close":"关闭热评"},"translate":true,"ctrlOriginalMenu":"按住Ctrl+右键可打开浏览器右键菜单"},"translate":{"translateDelay":0,"defaultEncoding":2},"lure":false,"expire":{"time":180,"position":"top","text_prev":"这篇文章在 ","text_next":" 天前更新，可能已经过期了！如有过时内容，请提醒我！"}}</template><template id="config-diff">{"is_post":true,"is_page":false,"is_home":false,"page":"post","toc":true,"comment":true,"ai_text":false,"color":false}</template><meta name="generator" content="Hexo 7.3.0"></head><body id="body"><div><div id="console"><div class="console-content"><div class="console-card-group" data-solitude-action="onConsoleCardGroupClick" data-solitude-event="true"><div class="console-card-group-left"><div class="console-card" id="card-newest-comments" data-solitude-action="hideConsole"><div class="card-content"><div class="author-content-item-tips">互动</div><div class="author-content-item-title">最新评论</div></div><div class="console_recentcomments"><script pjax>(async () => {
+    document.querySelector('.console-card .console_recentcomments').textContent = `加载中...`
+    const emojiReg = /<img class="tk-owo-emotion" [^>]+>/g
+    let cache = Solitude.saveToLocal.get('twikoo-recent-comments-console')
+    if (cache) {
+        setHtml(document.querySelector('.console-card .console_recentcomments'), cache)
+        return
+    }
+    let ls = []
+
+    await fetch('https://mc118cn-twikoo.netlify.app/.netlify/functions/twikoo', {
+        method: "POST",
+        body: JSON.stringify({
+            "event": "GET_RECENT_COMMENTS",
+            "includeReply": true,
+            "pageSize": 6
+        }),
+        headers: {'Content-Type': 'application/json'}
+    }).then(res => res.json()).then(async ({data}) => {
+        for (const i of data) {
+            if (i.avatar === undefined) i.avatar = 'https://gravatar.com/avatar/avatar/d615d5793929e8c7d70eab5f00f7f5f1?d=mp'
+            let title = ''
+            if (i.url) {
+                await fetch(i.url).then(res => res.text()).then(html => {
+                    const parser = new DOMParser()
+                    const doc = parser.parseFromString(html, 'text/html')
+                    title = doc.querySelector('title').innerText
+                }).catch(() => {
+                    title = i.url
+                })
+            }
+            if (title.indexOf('|') > 0) {
+                title = title.split('|')[0]
+            }
+            ls.push({
+                avatar: i.avatar,
+                nick: i.nick,
+                title: title,
+                content: i.comment,
+                url: i.url + '#' + i.id,
+                time: i.created
+            })
+        }
+        setHtml(document.querySelector('.console-card .console_recentcomments'), ls)
+        Solitude.saveToLocal.set('twikoo-recent-comments-console', ls, 0.2)
+    });
+
+    function setHtml(el, data) {
+        el.innerHTML = data.length !== 0 ? data.map(i => `
+            <div class="comment-card" title="${i.title}" data-solitude-action="navigateTo" data-solitude-url="${i.url}">
+                <div class="comment-info">
+                    <img src="${i.avatar}" class="nolazyload" alt="${i.nick}">
+                    <div>
+                        <span class="comment-user">${i.nick}</span>
+                    </div>
+                    <time class="comment-time" datetime="${new Date(i.time)}"></time>
+                </div>
+                <div class="comment-content">${formatContent(i.content)}</div>
+                <div class="comment-title">
+                <i class="solitude fas fa-comment"></i>
+                ${i.title}</div>
+            </div>
+        `).join('') : `暂无评论...`
+        Solitude.diffDateFormat(document.querySelectorAll('.comment-time'))
+    }
+
+    function formatContent(content) {
+        content = content.replace(emojiReg, '表情')
+        content = content.replace(/<\/*br>|[\s\uFEFF\xA0]+/g, '');
+        content = content.replace(/<img.*?>/g, '[图片]');
+        content = content.replace(/<a.*?>.*?<\/a>/g, '[链接]');
+        content = content.replace(/<pre.*?>.*?<\/pre>/g, '[代码]');
+        content = content.replace(/<.*?>/g, '');
+        return content
+    }
+})()</script></div></div></div><div class="console-card-group-right"><div class="console-card tags" data-solitude-action="hideConsole"><div class="card-content"><div class="author-content-item-tips">标签</div><div class="author-content-item-title">寻找感兴趣的领域</div></div><div class="card-tag-cloud"><a href="/tags/%E7%94%9F%E6%B4%BB/">生活<sup>2</sup></a><a href="/tags/%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/">成长之路<sup>5</sup></a><a href="/tags/%E7%BC%96%E7%A8%8B/">编程<sup>6</sup></a><a href="/tags/Hexo/">Hexo<sup>4</sup></a><a href="/tags/%E7%BB%8F%E9%AA%8C/">经验<sup>5</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/">教程<sup>4</sup></a><a href="/tags/%E5%85%AC%E5%91%8A/">公告<sup>2</sup></a><a href="/tags/Solitude/">Solitude<sup>1</sup></a></div></div><div class="console-card history" data-solitude-action="hideConsole"><ul class="card-archive-list"><li class="item"><a href="/archives/2026/07/"><span class="date">2026/07</span><div class="count-group"><span class="count">3</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/10/"><span class="date">2025/10</span><div class="count-group"><span class="count">3</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/08/"><span class="date">2025/08</span><div class="count-group"><span class="count">3</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2025/07/"><span class="date">2025/07</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2024/12/"><span class="date">2024/12</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2024/08/"><span class="date">2024/08</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/2024/06/"><span class="date">2024/06</span><div class="count-group"><span class="count">1</span><span class="unit">篇</span></div></a></li><li class="item"><a href="/archives/"><span class="date">全部文章</span><div class="count-group"><span class="count">13</span><span class="unit">篇</span></div></a></li></ul></div></div></div><div class="button-group"><div class="console-btn-item"><span class="darkmode_switchbutton" data-solitude-action="toggleTheme" title="昼夜切换" heotip="昼夜切换"><i class="solitude fas fa-circle-half-stroke"></i></span></div><div class="console-btn-item" id="consoleHideAside"><span class="asideSwitch" data-solitude-action="switchHideAside" title="边栏显示控制" heotip="边栏显示控制"><i class="solitude fas fa-arrows-left-right-to-line"></i></span></div><div class="console-btn-item" id="consoleMusic" data-solitude-action="musicToggle"><span class="music-switch" title="音乐开关" heotip="音乐开关"><i class="solitude fas fa-compact-disc"></i></span></div><div class="console-btn-item on" id="consoleCommentBarrage" data-solitude-action="switchCommentBarrage"><span class="commentBarrage" title="热评" heotip="热评"><i class="solitude fas fa-comment"></i></span></div></div></div><div class="console-mask" data-solitude-action="hideConsole"></div></div></div><div id="sidebar" style="zoom: 1;"><div id="menu-mask" style="display: none;"></div><div id="sidebar-menus"><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">8</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/recentcomments/"><div class="headline">评论</div><div class="length-num" id="twikoo_allcount"><i class="solitude fas fa-spinner fa-spin"></i></div><script pjax="pjax">(async () => {
+  await fetch('https://mc118cn-twikoo.netlify.app/.netlify/functions/twikoo', {
+    method: "POST",
+    body: JSON.stringify({
+      "event": "GET_RECENT_COMMENTS",
+      "includeReply": true,
+      "pageSize": 999
+    }),
+    headers: {'Content-Type': 'application/json'}
+  }).then(res => res.json()).then(async ({data}) => {
+    document.querySelector('#twikoo_allcount').innerHTML = data.length
+  })
+})()</script></a></div></div></div><span class="sidebar-menu-item-title">功能</span><div class="sidebar-menu-item"><span class="darkmode_switchbutton menu-child" data-solitude-action="toggleTheme"><i class="solitude fas fa-circle-half-stroke"></i><span>显示模式</span></span></div><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网站</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html" title="开往" heotip="开往"><img class="nolazyload back-menu-item-icon" src="/fonticon/train.svg" alt="开往"><span class="back-menu-item-text">开往</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">作者链接</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/muhu-c/" title="Github" heotip="Github"><img class="nolazyload back-menu-item-icon" src="/fonticon/github.svg" alt="Github"><span class="back-menu-item-text">Github</span></a></div></div></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于</span></a></li></ul></div></div><span class="sidebar-menu-item-title">标签</span><div class="card-tags"><div class="card-tag-cloud"><a href="/tags/%E7%94%9F%E6%B4%BB/">生活<sup>2</sup></a><a href="/tags/%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/">成长之路<sup>5</sup></a><a href="/tags/%E7%BC%96%E7%A8%8B/">编程<sup>6</sup></a><a href="/tags/Hexo/">Hexo<sup>4</sup></a><a href="/tags/%E7%BB%8F%E9%AA%8C/">经验<sup>5</sup></a><a href="/tags/%E6%95%99%E7%A8%8B/">教程<sup>4</sup></a><a href="/tags/%E5%85%AC%E5%91%8A/">公告<sup>2</sup></a><a href="/tags/Solitude/">Solitude<sup>1</sup></a></div></div><span class="sidebar-menu-item-title">网站信息</span><div class="webinfo"><div class="webinfo-item"><div class="item-name">全站字数 :</div><div class="item-count">11.5k</div></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav class="show" id="nav" data-solitude-action="onNavBlankClickCloseConsole" data-solitude-event="true"><div id="nav-group"><div id="blog_name"><div class="back-home-button" tabindex="-1"><i class="solitude fas fa-bars-progress"></i><div class="back-menu-list-groups"><div class="back-menu-list-group"><div class="back-menu-list-title">网站</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html" title="开往" heotip="开往"><img class="nolazyload back-menu-item-icon" src="/fonticon/train.svg" alt="开往"><span class="back-menu-item-text">开往</span></a></div></div><div class="back-menu-list-group"><div class="back-menu-list-title">作者链接</div><div class="back-menu-list"><a class="back-menu-item" target="_blank" rel="noopener" href="https://github.com/muhu-c/" title="Github" heotip="Github"><img class="nolazyload back-menu-item-icon" src="/fonticon/github.svg" alt="Github"><span class="back-menu-item-text">Github</span></a></div></div></div></div><a href="/" title="返回博客主页" id="site-name" heotip="返回博客主页"><span class="title">MC118CN 的博客</span><i class="solitude fas fa-home"></i></a></div><div id="page-name-mask"><div id="page-name"><a id="page-name-text" data-solitude-action="toTop" title="返回顶部" heotip="返回顶部">记自己建立博客的曲折历程（二）</a></div></div><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><span>首页</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>文章</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/archives/"><i class="solitude  fas fa-folder-closed"></i><span>归档</span></a></li><li><a class="site-page child" href="/categories/"><i class="solitude  fas fa-clone"></i><span>分类</span></a></li><li><a class="site-page child" href="/tags/"><i class="solitude  fas fa-tags"></i><span>标签</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="javascript:void(0);"><span>我的</span></a><ul class="menus_item_child"><li><a class="site-page child" href="/about/"><i class="solitude  fas fa-user"></i><span>关于</span></a></li></ul></div></div></div><div id="nav-left"></div><div id="nav-right"><div class="nav-button" id="travellings_button"><a class="site-page" target="_blank" rel="noopener" href="https://www.travellings.cn/go.html" title="开往" heotip="开往"><i class="solitude fas fa-train"></i></a></div><div class="nav-button" id="nav-console"><a class="console_switchbutton" data-solitude-action="toggleConsole" data-solitude-prevent="true" title="中控台" heotip="中控台" href="javascript:void(0);"><label><i class="left"></i><i class="center"></i><i class="right"></i></label></a></div><div class="nav-button" id="nav-totop" data-solitude-action="toTop" title="返回顶部" heotip="返回顶部"><a class="totopbtn"><i class="solitude fas fa-arrow-up"></i><span id="percent">0</span></a></div><div id="toggle-menu"><a class="site-page"><i class="solitude fas fa-bars"></i></a></div></div></div></nav><div class="coverdiv" id="coverdiv"><img class="nolazyload" id="post-cover" src="https://pic.mc118cn.cn/images/hexo.png" alt="记自己建立博客的曲折历程（二）"></div><div class="post-cover-aside"><a class="post-cover-aside-link fancybox" href="https://pic.mc118cn.cn/images/hexo.png" target="_blank" rel="noopener" data-fancybox="images" data-caption="记自己建立博客的曲折历程（二）" aria-label="记自己建立博客的曲折历程（二）"><img class="post-cover-aside-img nolazyload" src="https://pic.mc118cn.cn/images/hexo.png" alt="记自己建立博客的曲折历程（二）"></a></div><div id="post-info"><div id="post-firstinfo"><div class="meta-firstline"><a class="post-meta-original" title="该文章为原创文章，注意版权协议">原创</a><span class="post-meta-categories"><a class="post-meta-categories" href="/categories/%E5%AD%A6%E4%B9%A0/">学习</a></span><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>成长之路</span></a><a class="post-meta__tags" href="/tags/%E7%BB%8F%E9%AA%8C/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>经验</span></a><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/"><span class="tags-name tags-punctuation"><i class="solitude fas fa-hashtag"></i>教程</span></a></div></div></div></div><h1 class="post-title">记自己建立博客的曲折历程（二）</h1><div id="post-meta"><div class="meta-secondline"></div></div></div><div class="post-radius-bottom"></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content article-container"><p><em>本文章是教程文章，可以按作者的步骤学习。</em><br>
+<br/></p>
+<h2 id="前言">前言</h2>
+<h3 id="介绍">介绍</h3>
+<ul>
+<li><strong>公网(外网)</strong> 即广域网，指的是公共网络，规模大，用户可以在不同地区访问公网的内容。</li>
+<li><strong>内网</strong> 即局域网，规模一般在方圆几千米以内。正常情况下，家里的网络都是内网。内网里的设备可以访问内网的内容。如果内网的设备没有公网 IP，在公网上则无法访问内网。</li>
+<li><strong>Netlify Pages</strong> 也是一个静态网页托管平台，可以从 Github 上直接导入 Pages。</li>
+<li><strong>Frp</strong> 指的是内网穿透，它可以将内网的网站映射到外网，以供其他地区的用户使用。</li>
+<li><strong>Umami</strong> 是一个网站访问统计系统，可以自行部署，也可以用 <strong>Vercel + Cloudflare Workers</strong> 部署。</li>
+</ul>
+<div class="note warn"><i class="solitude fas fa-triangle-exclamation"></i><p>由于 Vercel 直接提供的地址和 Cloudflare Workers 在国内难以访问，因此国内选择本地部署 + Frp 内网穿透更好。<br>
+Vercel 连接自己的域名的确可以访问，本文章暂不叙述此内容。</p></div>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">Cloudflare</th>
+<th style="text-align:center">Vercel 直接提供的地址</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><img src= "" data-lazy-src="https://pic.mc118cn.cn/images/blog-experience-2/cf.png" alt="访问情况"></td>
+<td style="text-align:center"><img src= "" data-lazy-src="https://pic.mc118cn.cn/images/blog-experience-2/vc.png" alt="访问情况"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="提示">提示</h3>
+<ul>
+<li>此过程包含不少访问国外网站的要求，如无法访问，请使用 <a target="_blank" rel="noopener" href="https://steampp.net/">Watt Toolkit</a> 等加速软件。</li>
+<li>若有<strong>公网 IP 服务器</strong>，可以直接把 SSL 证书添加到 Nginx 反向代理中进行访问，详见文档 <a href="../../../../2025/10/01/%E8%AE%B0%E8%87%AA%E5%B7%B1%E5%BB%BA%E7%AB%8B%E5%8D%9A%E5%AE%A2%E7%9A%84%E6%9B%B2%E6%8A%98%E5%8E%86%E7%A8%8B%EF%BC%88%E4%B8%89%EF%BC%89/"><em>历程（三） 第一步 配置 Nginx</em></a></li>
+<li>步骤中的 <strong>“Umami”</strong> 不要拼错</li>
+</ul>
+<h3 id="要求">要求</h3>
+<ol>
+<li>一台可正常运行的 <strong>Linux</strong> 主机（以 Ubuntu 为例）</li>
+<li>能访问 <a target="_blank" rel="noopener" href="https://github.com/">Github</a> 的网络 ( 可能需要 Watt Toolkit 等加速 )</li>
+<li>一定的英语和 Linux 命令行知识储备</li>
+<li>一个<strong>自己的域名</strong></li>
+</ol>
+<h2 id="第一步-配置域名">第一步 配置域名</h2>
+<p>由于其他方案配置域名的教程文档已经足够多，这里只讲 <strong>Netlify 方案</strong></p>
+<h3 id="配置博客网站的域名（Netlify-方式）">配置博客网站的域名（Netlify 方式）</h3>
+<ol>
+<li>
+<p>在 <a target="_blank" rel="noopener" href="https://netlify.com/">Netlify</a> 上注册账号。</p>
+</li>
+<li>
+<p>点击 <strong>Project -&gt; Add new project -&gt; Import an existing project</strong>。</p>
+</li>
+<li>
+<p>在跳出页面中点击 <strong>Github</strong>，找到自己的 Github Pages 并选中，填入 <strong>Project name</strong> 后若无其他需要配置的项目，下拉 <strong>Deploy</strong>，等待配置完成。</p>
+</li>
+<li>
+<p>找到 Projects / 你刚刚的 Project name，进入后来到左侧 Domain management。</p>
+</li>
+<li>
+<p>再找到 <strong>Add Domain -&gt; Add a domain you already own</strong> 填入你的域名，并将要求的 <strong>TXT 记录</strong>添加至域名运营商的 DNS 配置里</p>
+</li>
+<li>
+<p>等待 <strong>DNS</strong> 配置完成后回到 Netlify，点击 <strong>Add Subdomain / Add Domain</strong> 完成网站配置。</p>
+</li>
+</ol>
+<div class="note warn"><i class="solitude fas fa-triangle-exclamation"></i><p>注意：刚配置完域名时，访问网站会出现 SSL 证书问题，需要等待一会，完成证书颁发后即可</p></div>
+<hr>
+<h2 id="第二步-配置-Umami">第二步 配置 Umami</h2>
+<p>这里转到你的服务器。</p>
+<h3 id="安装-PostgreSQL-以-Ubuntu-以及有-apt-的系统为例">安装 PostgreSQL (以 Ubuntu 以及有 apt 的系统为例)</h3>
+<p>安装 PostgreSQL</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt update</span><br><span class="line"><span class="built_in">sudo</span> apt install postgresql postgresql-contrib</span><br></pre></td></tr></table></figure>
+<p>验证服务状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl status postgresql</span><br></pre></td></tr></table></figure>
+<p>切换到 PostgreSQL 的默认用户</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> -i -u postgres</span><br></pre></td></tr></table></figure>
+<p>进入数据库命令行</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">psql</span><br></pre></td></tr></table></figure>
+<p>创建数据库（如命名为 <strong>umami_db</strong>）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> DATABASE umami_db;</span><br></pre></td></tr></table></figure>
+<p>创建数据库用户（如 <strong>umami_user</strong>）并设置密码（替换 <strong>your_password</strong> 为密码）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">USER</span> umami_user <span class="keyword">WITH</span> ENCRYPTED PASSWORD <span class="string">&#x27;your_password&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>授予用户权限（让 <strong>umami_user</strong> 能操作 <strong>umami_db</strong> ）</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">GRANT</span> <span class="keyword">ALL</span> PRIVILEGES <span class="keyword">ON</span> DATABASE umami_db <span class="keyword">TO</span> umami_user;</span><br></pre></td></tr></table></figure>
+<p>退出 PostgreSQL 命令行并退出 postgres 用户</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\q</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<h3 id="安装-Umami">安装 Umami</h3>
+<p>由于博客引擎为 Hexo，对 Node.js 的熟悉程度较深，本文提供手动安装 Umami 的方式</p>
+<p>安装 Node.js 和 Git</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> apt install nodejs npm git -y</span><br></pre></td></tr></table></figure>
+<h4 id="方案一-使用-Git-克隆">方案一 使用 Git 克隆</h4>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/umami-software/umami.git</span><br><span class="line"><span class="built_in">cd</span> umami</span><br></pre></td></tr></table></figure>
+<h4 id="方案二-直接下载">方案二 直接下载</h4>
+<a class="tag-link" href="https://github.com/umami-software/umami" target="_blank">
+    <div class="tag-link-tips">引用站外链接</div>
+    <div class="tag-link-bottom">
+        <div class="tag-link-left">
+          <i class="solitude fas fa-link"></i>
+        </div>
+        <div class="tag-link-right">
+            <div class="tag-link-title">Umami</div>
+            <div class="tag-link-sitename">Github 地址</div>
+        </div>
+        <i class="solitude fas fa-chevron-right"></i>
+    </div></a>
+<h3 id="配置并启动-Umami">配置并启动 Umami</h3>
+<p>解压并移动到需要放置的文件夹，保证 <a target="_blank" rel="noopener" href="http://README.MD">README.MD</a> 所在的一层在此文件夹内</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> &lt; Umami 所在文件夹 &gt;</span><br></pre></td></tr></table></figure>
+<p>安装依赖</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>创建环境变量文件并使用 nano 编辑</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> .env.example .<span class="built_in">env</span></span><br><span class="line">nano .<span class="built_in">env</span></span><br></pre></td></tr></table></figure>
+<p>修改数据库配置 (其中 <strong>umami_user</strong>，<strong>your_password</strong>，<strong>umami_db</strong> 均为上文提到的内容，根据自己的情况配置)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DATABASE_URL=postgresql://umami_user:your_password@localhost:5432/umami_db</span><br></pre></td></tr></table></figure>
+<p>初始化数据库</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm run build</span><br></pre></td></tr></table></figure>
+<h4 id="使用-yarn-把-Umami-封装成服务，并开机自启">使用 yarn 把 Umami 封装成服务，并开机自启</h4>
+<h5 id="新建服务配置文件">新建服务配置文件</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> nano /etc/systemd/system/umami.service</span><br></pre></td></tr></table></figure>
+<p>填入以下内容（根据实际修改）</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[Unit]</span></span><br><span class="line"><span class="attr">Description</span>=Umami Analytics Service</span><br><span class="line"><span class="attr">After</span>=network.target postgresql.service  <span class="comment"># 确保在网络和 PostgreSQL 启动后运行</span></span><br><span class="line"><span class="attr">Wants</span>=postgresql.service</span><br><span class="line"></span><br><span class="line"><span class="section">[Service]</span></span><br><span class="line"><span class="attr">User</span>=&lt;你的用户名&gt;  <span class="comment"># 替换为你的Linux用户名（非root）</span></span><br><span class="line"><span class="attr">WorkingDirectory</span>=&lt;umami 目录&gt;  <span class="comment"># 替换为Umami项目实际目录</span></span><br><span class="line"><span class="attr">ExecStart</span>=&lt;yarn 路径&gt; start  <span class="comment"># 启动命令（用 which yarn 命令查找 yarn 路径）</span></span><br><span class="line"><span class="attr">Restart</span>=always  <span class="comment"># 服务意外停止时自动重启</span></span><br><span class="line"><span class="attr">RestartSec</span>=<span class="number">5</span>  <span class="comment"># 重启间隔时间（秒）</span></span><br><span class="line"><span class="attr">Environment</span>=NODE_ENV=production  <span class="comment"># 生产环境变量</span></span><br><span class="line"></span><br><span class="line"><span class="section">[Install]</span></span><br><span class="line"><span class="attr">WantedBy</span>=multi-user.target  <span class="comment"># 多用户模式下开机启动</span></span><br></pre></td></tr></table></figure>
+<p>注意替换 你的用户名 和 Umami项目目录 为实际路径<br>
+可以通过 which yarn 命令确认yarn的安装路径，替换/usr/bin/yarn</p>
+<h5 id="设置服务并开机自启">设置服务并开机自启</h5>
+<p>重新加载 systemd 配置</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl daemon-reload</span><br></pre></td></tr></table></figure>
+<p>启动 Umami 服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl start umami</span><br></pre></td></tr></table></figure>
+<p>设置开机自启</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">enable</span> umami</span><br></pre></td></tr></table></figure>
+<h5 id="验证服务状态">验证服务状态</h5>
+<p>查看服务运行状态</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> systemctl status umami</span><br></pre></td></tr></table></figure>
+<p>出现 active (running) 表示启动成功。</p>
+<p>查看服务日志（排查错误用）：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> journalctl -u umami -f  <span class="comment"># -f 表示实时跟踪日志</span></span><br></pre></td></tr></table></figure>
+<h5 id="常用命令">常用命令</h5>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 关闭服务</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl stop umami</span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl restart umami</span><br><span class="line"><span class="comment"># 禁用开机自启</span></span><br><span class="line"><span class="built_in">sudo</span> systemctl <span class="built_in">disable</span> umami</span><br></pre></td></tr></table></figure>
+<h2 id="第三步-使用-Umami">第三步 使用 Umami</h2>
+<h3 id="登录-Umami-网页">登录 Umami 网页</h3>
+<p>在当前安装 Umami 的主机上打开 <code>localhost:3000</code> 以访问本地网站。</p>
+<div class="note warn"><i class="solitude fas fa-triangle-exclamation"></i><p>或者，如果该主机没有桌面 UI，可使用 <strong>内网其他设备</strong> 访问</p></div>
+<p><img src= "" data-lazy-src="https://pic.mc118cn.cn/images/blog-experience-2/0.png" alt="打开 Umami 本地网站后的画面"></p>
+<p>完成后，填入默认用户名 <code>admin</code> 和 默认密码 <code>umami</code> ，登录后建议转到 <code>Settings/Users</code> 点击 <code>Edit</code> 更改密码。</p>
+<h3 id="创建网站统计">创建网站统计</h3>
+<p>转到 <code>Settings/Websites</code>，点击 <code>Add Website</code>。Name 任意填写，Domain 填写你网站的域名。</p>
+<p><img src= "" data-lazy-src="https://pic.mc118cn.cn/images/blog-experience-2/1.png" alt="创建网站统计"></p>
+<h2 id="第四步-使用-Umami-API">第四步 使用 Umami API</h2>
+<h3 id="获取-Token">获取 Token</h3>
+<p>记住你的 Umami 用户名和密码，使用可发送与接收 <strong>POST</strong> 信息的工具，如 <a target="_blank" rel="noopener" href="https://hoppscotch.io/">Hoppstoach</a>（由于内网限制，若使用 Frp 方案，需要下载客户端）</p>
+<blockquote>
+<p>POST 地址    <code>(网站根目录)/api/auth/login</code><br>
+POST Request Body (json)</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;username&quot;</span><span class="punctuation">:</span> <span class="string">&quot;你的用户名&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;password&quot;</span><span class="punctuation">:</span> <span class="string">&quot;你的密码&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>如果网络、发送方法和发送内容正常，则会返回以下内容</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;token&quot;</span><span class="punctuation">:</span> <span class="string">&quot;你的 API 密钥&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;user&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;...&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;username&quot;</span><span class="punctuation">:</span> <span class="string">&quot;...&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;role&quot;</span><span class="punctuation">:</span> <span class="string">&quot;...&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;createdAt&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xxxx-xx-xxTxx:xx:xx.xxxZ&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;isAdmin&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>复制 API 密钥备用（不加引号）。</p>
+<h4 id="出现问题了？">出现问题了？</h4>
+<ol>
+<li>
+<p>报错 401 Not Authorized<br>
+你的用户名或密码填错了！</p>
+</li>
+<li>
+<p>报错 405 Method Not Allowed<br>
+请检查一下你的发送方式是不是 POST！</p>
+</li>
+</ol>
+<h3 id="API-信息获取方法以及返回内容">API 信息获取方法以及返回内容</h3>
+<h4 id="获取方法">获取方法</h4>
+<p>来到你的 Umami 统计网站，登录，转到 <code>Settings/Websites</code>，点击 <code>Edit</code>，复制 <code>Website ID</code> 作为你的网站 ID。</p>
+<p>使用 GET 方法（不能直接输入网址）请求<br>
+<code>https://&lt;你的 API 地址&gt;/api/websites/&lt;你的网站 ID&gt;/stats?startAt=&lt;开始时间戳(毫秒)&gt;&amp;endAt=&lt;结束时间戳(毫秒)&gt;</code> ，并使用 Bearer Authorization，验证内容就是<strong>你的 API 密钥</strong>。</p>
+<h4 id="返回内容">返回内容</h4>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;pageviews&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="number">555</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;prev&quot;</span><span class="punctuation">:</span> <span class="number">0</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;visitors&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="number">40</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;prev&quot;</span><span class="punctuation">:</span> <span class="number">0</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;visits&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="number">80</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;prev&quot;</span><span class="punctuation">:</span> <span class="number">0</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;bounces&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="number">32</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;prev&quot;</span><span class="punctuation">:</span> <span class="number">0</span></span><br><span class="line">  <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;totaltime&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;value&quot;</span><span class="punctuation">:</span> <span class="number">24567</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;prev&quot;</span><span class="punctuation">:</span> <span class="number">0</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><strong>项目</strong></th>
+<th style="text-align:center">pageview</th>
+<th style="text-align:center">visitors</th>
+<th style="text-align:center">visits</th>
+<th style="text-align:center">bounces</th>
+<th style="text-align:center">totalTime</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"><strong>含义</strong></td>
+<td style="text-align:center">页面浏览数</td>
+<td style="text-align:center">访问人数</td>
+<td style="text-align:center">访问次数</td>
+<td style="text-align:center">仅访问单个页面的用户数</td>
+<td style="text-align:center">总用户访问时间</td>
+</tr>
+</tbody>
+</table>
+</article><div class="post-copyright"><div class="post-copyright__author_group"><div class="post-copyright__author_img"><img class="post-copyright__author_img_front" src="/img/avatar.png"></div><div class="post-copyright__author_name">MC118CN</div><div class="post-copyright__author_desc"></div></div><div class="post-tools" id="post-tools"><div class="post-tools-left"><div id="quit-box" data-solitude-action="hideReward"></div></div></div><div class="post-copyright__notice"><span class="post-copyright-info">本文是原创文章，采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans">CC BY-NC-SA 4.0</a>协议，完整转载请注明来自<a href="/">MC118CN 的博客</a></span></div></div><div class="post-tools-right"><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E6%88%90%E9%95%BF%E4%B9%8B%E8%B7%AF/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>成长之路<span class="tagsPageCount">5</span></span></a><a class="post-meta__tags" href="/tags/%E7%BB%8F%E9%AA%8C/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>经验<span class="tagsPageCount">5</span></span></a><a class="post-meta__tags" href="/tags/%E6%95%99%E7%A8%8B/"><span class="tags-punctuation"><i class="solitude fas fa-hashtag"></i>教程<span class="tagsPageCount">4</span></span></a></div></div></div><nav class="needEndHide pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/archives/blog-experience-3/"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">记自己建立博客的曲折历程（三）</div></div></a></div><div class="next-post pull-right"><a href="/archives/blog-notice/"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">公告</div></div></a></div></nav><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="solitude fas fa-comment"></i><span> 评论</span><span class="count"> (<span class="twikoo-count"><i class="solitude fas fa-spinner fa-spin"></i></span>)</span></div></div><div class="comment-wrap"><div id="twikoo-wrap"></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><div class="top-group"><div class="sayhi" id="sayhi" data-solitude-action="changeWittyWord"></div></div></div><div class="avatar"><img alt="头像" src="/img/avatar.png"></div><div class="description">欢迎来到我的博客网站！<br/>本人是一名高中生<br/>本网站会分享一些编程、学习（教程）以及日常生活内容</div><div class="bottom-group"><span class="left"><div class="name">MC118CN</div><div class="desc">感谢您的访问！</div></span><div class="social-icons is-center"><a class="social-icon" target="_blank" rel="noopener" href="https://github.com/muhu-c" title="Github" heotip="Github"><i class="solitude  fab fa-github"></i></a><a class="social-icon" target="_blank" rel="noopener" href="https://space.bilibili.com/1469137723" title="Bilibili" heotip="Bilibili"><i class="solitude  fab fa-bilibili"></i></a></div></div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="solitude fas fa-bars"></i><span>文章目录</span></div><div class="toc-content" id="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-text">前言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D"><span class="toc-text">介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8F%90%E7%A4%BA"><span class="toc-text">提示</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A6%81%E6%B1%82"><span class="toc-text">要求</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5-%E9%85%8D%E7%BD%AE%E5%9F%9F%E5%90%8D"><span class="toc-text">第一步 配置域名</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2%E7%BD%91%E7%AB%99%E7%9A%84%E5%9F%9F%E5%90%8D%EF%BC%88Netlify-%E6%96%B9%E5%BC%8F%EF%BC%89"><span class="toc-text">配置博客网站的域名（Netlify 方式）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5-%E9%85%8D%E7%BD%AE-Umami"><span class="toc-text">第二步 配置 Umami</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-PostgreSQL-%E4%BB%A5-Ubuntu-%E4%BB%A5%E5%8F%8A%E6%9C%89-apt-%E7%9A%84%E7%B3%BB%E7%BB%9F%E4%B8%BA%E4%BE%8B"><span class="toc-text">安装 PostgreSQL (以 Ubuntu 以及有 apt 的系统为例)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%89%E8%A3%85-Umami"><span class="toc-text">安装 Umami</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%B8%80-%E4%BD%BF%E7%94%A8-Git-%E5%85%8B%E9%9A%86"><span class="toc-text">方案一 使用 Git 克隆</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%A1%88%E4%BA%8C-%E7%9B%B4%E6%8E%A5%E4%B8%8B%E8%BD%BD"><span class="toc-text">方案二 直接下载</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%B9%B6%E5%90%AF%E5%8A%A8-Umami"><span class="toc-text">配置并启动 Umami</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8-yarn-%E6%8A%8A-Umami-%E5%B0%81%E8%A3%85%E6%88%90%E6%9C%8D%E5%8A%A1%EF%BC%8C%E5%B9%B6%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF"><span class="toc-text">使用 yarn 把 Umami 封装成服务，并开机自启</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%96%B0%E5%BB%BA%E6%9C%8D%E5%8A%A1%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="toc-text">新建服务配置文件</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%9C%8D%E5%8A%A1%E5%B9%B6%E5%BC%80%E6%9C%BA%E8%87%AA%E5%90%AF"><span class="toc-text">设置服务并开机自启</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%AA%8C%E8%AF%81%E6%9C%8D%E5%8A%A1%E7%8A%B6%E6%80%81"><span class="toc-text">验证服务状态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"><span class="toc-text">常用命令</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5-%E4%BD%BF%E7%94%A8-Umami"><span class="toc-text">第三步 使用 Umami</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%99%BB%E5%BD%95-Umami-%E7%BD%91%E9%A1%B5"><span class="toc-text">登录 Umami 网页</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%BD%91%E7%AB%99%E7%BB%9F%E8%AE%A1"><span class="toc-text">创建网站统计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5-%E4%BD%BF%E7%94%A8-Umami-API"><span class="toc-text">第四步 使用 Umami API</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96-Token"><span class="toc-text">获取 Token</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%87%BA%E7%8E%B0%E9%97%AE%E9%A2%98%E4%BA%86%EF%BC%9F"><span class="toc-text">出现问题了？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#API-%E4%BF%A1%E6%81%AF%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95%E4%BB%A5%E5%8F%8A%E8%BF%94%E5%9B%9E%E5%86%85%E5%AE%B9"><span class="toc-text">API 信息获取方法以及返回内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%8E%B7%E5%8F%96%E6%96%B9%E6%B3%95"><span class="toc-text">获取方法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%94%E5%9B%9E%E5%86%85%E5%AE%B9"><span class="toc-text">返回内容</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="solitude fas fa-map"></i><span>最近发布</span></div><div class="aside-list"><a class="aside-list-item" href="/archives/about-netlify/" title="关于 Netlify 的 Legacy 方案"><div class="thumbnail"><img alt="关于 Netlify 的 Legacy 方案" src="https://pic.mc118cn.cn/images/about-netlify.jpg"></div><div class="content"><span class="title" href="/archives/about-netlify/" title="关于 Netlify 的 Legacy 方案">关于 Netlify 的 Legacy 方案</span><span class="categories" href="/archives/about-netlify/">教程</span></div></a><a class="aside-list-item" href="/archives/blog-notice-of-views/" title="关于国内访问网站的声明 Statement on Domestic Access to the Website"><div class="thumbnail"><img alt="关于国内访问网站的声明 Statement on Domestic Access to the Website" src="https://pic.mc118cn.cn/images/notice-of-views.jpg"></div><div class="content"><span class="title" href="/archives/blog-notice-of-views/" title="关于国内访问网站的声明 Statement on Domestic Access to the Website">关于国内访问网站的声明 Statement on Domestic Access to the Website</span><span class="categories" href="/archives/blog-notice-of-views/">编程</span></div></a><a class="aside-list-item" href="/archives/datetimer-2-0-cancel/" title="DateTimer 2 停止更新"><div class="thumbnail"><img alt="DateTimer 2 停止更新" src="https://pic.mc118cn.cn/images/dt2-un.jpg"></div><div class="content"><span class="title" href="/archives/datetimer-2-0-cancel/" title="DateTimer 2 停止更新">DateTimer 2 停止更新</span><span class="categories" href="/archives/datetimer-2-0-cancel/">编程</span></div></a><a class="aside-list-item" href="/archives/perfect-way-for-umami/" title="折腾 Umami"><div class="thumbnail"><img alt="折腾 Umami" src="https://pic.mc118cn.cn/images/pwfumami.jpg"></div><div class="content"><span class="title" href="/archives/perfect-way-for-umami/" title="折腾 Umami">折腾 Umami</span><span class="categories" href="/archives/perfect-way-for-umami/">教程</span></div></a><a class="aside-list-item" href="/archives/solitude-changes/" title="关于本网站的 Solitude 主题"><div class="thumbnail"><img alt="关于本网站的 Solitude 主题" src="https://pic.mc118cn.cn/images/solitude.jpg"></div><div class="content"><span class="title" href="/archives/solitude-changes/" title="关于本网站的 Solitude 主题">关于本网站的 Solitude 主题</span><span class="categories" href="/archives/solitude-changes/">编程</span></div></a></div></div></div></div></main><footer id="footer"><div id="footer_deal"><a class="deal_link" target="_blank" rel="noopener" href="https://github.com/muhu-c" title="Github" heotip="Github"><i class="solitude  fab fa-github"></i></a><a class="deal_link" href="mailto:mc118cn@126.com" title="邮箱" heotip="邮箱"><i class="solitude  far fa-envelope"></i></a><div><div class="nolazyload footer_mini_logo" id="footer_mini_logo" title="返回顶部" heotip="返回顶部" data-solitude-action="toTop"><img src= "" data-lazy-src="/img/avatar.png" alt="返回顶部"></div></div><a class="deal_link" target="_blank" rel="noopener" href="https://space.bilibili.com/1469137723" title="Bilibili" heotip="Bilibili"><i class="solitude  fab fa-bilibili"></i></a><a class="deal_link" target="_blank" rel="noopener" href="https://www.zhihu.com/people/muhu-c" title="知乎" heotip="知乎"><i class="solitude  fab fa-zhihu"></i></a></div><div id="st-footer"></div><div id="footer-bar"><div class="footer-bar-links"><div class="footer-bar-left"><div class="copyright">© 2024 - 2026 By<a class="footer-bar-link" href="/" title="MC118CN">MC118CN</a></div><div class="beian-group"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://hexo.io/" title="框架：Hexo" heotip="框架：Hexo">框架：Hexo</a><a class="footer-bar-link" target="_blank" rel="noopener" href="https://github.com/everfu/hexo-theme-solitude" title="主题：MuhuTheme adapted by Solitude 4" heotip="主题：MuhuTheme adapted by Solitude 4">主题：MuhuTheme adapted by Solitude 4</a></div></div><div><div class="footer-bar-right"><a class="footer-bar-link" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans" title="License" heotip="License"><i class="solitude fas fa-copyright"></i><i class="solitude fab fa-creative-commons-by"></i><i class="solitude fab fa-creative-commons-nc"></i><i class="solitude fab fa-creative-commons-sa"></i></a></div></div></div></div><div><div class="comment-barrage needEndHide"></div></div></footer></div><div><div id="rightMenu"><div class="rightMenu-group rightMenu-small"><div class="rightMenu-item" id="menu-backward"><i class="solitude fas fa-arrow-left"></i></div><div class="rightMenu-item" id="menu-forward"><i class="solitude fas fa-arrow-right"></i></div><div class="rightMenu-item" id="menu-refresh"><i class="solitude fas fa-arrows-rotate"></i></div><div class="rightMenu-item" id="menu-top"><i class="solitude fas fa-arrow-up"></i></div></div><div class="rightMenu-group rightMenu-line rightMenuPlugin"><div class="rightMenu-item" id="menu-copytext"><i class="solitude fas fa-clone"></i><span>复制选中文本</span></div><div class="rightMenu-item" id="menu-pastetext"><i class="solitude fas fa-clipboard"></i><span>粘贴文本</span></div><div class="rightMenu-item" id="menu-commenttext"><i class="solitude fas fa-comment-medical"></i><span>引用到评论</span></div><div class="rightMenu-item" id="menu-newwindow"><i class="solitude far fa-window-maximize"></i><span>新窗口打开</span></div><div class="rightMenu-item" id="menu-copylink"><i class="solitude fas fa-link"></i><span>复制链接地址</span></div><div class="rightMenu-item" id="menu-copyimg"><i class="solitude fas fa-clone"></i><span>复制此图片</span></div><div class="rightMenu-item" id="menu-downloadimg"><i class="solitude fas fa-cloud-arrow-down"></i><span>下载此图片</span></div><div class="rightMenu-item" id="menu-music-toggle"><i class="solitude fas fa-play"></i><span>播放音乐</span></div><div class="rightMenu-item" id="menu-music-back"><i class="solitude fas fa-backward"></i><span>切换到上一首</span></div><div class="rightMenu-item" id="menu-music-forward"><i class="solitude fas fa-forward"></i><span>切换到下一首</span></div><div class="rightMenu-item" id="menu-music-copyMusicName"><i class="solitude fas fa-clone"></i><span>复制歌名</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-randomPost" data-solitude-action="runConfiguredAction" data-solitude-value="toRandomPost()"><i class="solitude fas fa-tower-broadcast"></i><span>随机文章</span></div></div><div class="rightMenu-group rightMenu-line rightMenuOther"><div class="rightMenu-item" id="menu-commentBarrage" data-solitude-action="switchCommentBarrage"><i class="solitude fas fa-comment"></i><span class="menu-commentBarrage-text">关闭热评</span></div><div class="rightMenu-item" id="menu-darkmode" data-solitude-action="switchDarkMode"><i class="solitude fas fa-circle-half-stroke"></i><span class="menu-darkmode-text">NONE</span></div><div class="rightMenu-item" id="menu-translate"><i class="solitude fas fa-language"></i><span>轉為繁體</span></div></div></div><div id="rightmenu-mask"></div></div><div><!-- Critical scripts loaded synchronously--><script src="/js/utils.js?v=1.1.0"></script><!-- Non-critical scripts loaded asynchronously--><script defer src="/js/third_party/waterfall.min.js?v=1.1.0"></script><script src="https://cdn.jsdmirror.cn/npm/pjax@0.2.8/pjax.min.js"></script><!-- Feature-specific scripts loaded asynchronously--><script defer src="https://cdn.jsdmirror.cn/npm/typeit@8.8.7/dist/index.umd.min.js"></script><script src="https://cdn.jsdmirror.cn/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"><script>(() => {
+  document.querySelectorAll('.article-container span.katex-display').forEach(item => {
+    Solitude.wrap(item, 'div', {class: 'katex-wrap'})
+  })
+})();
+</script></script><!-- UI enhancement scripts--><script src="https://cdn.jsdmirror.cn/npm/vanilla-lazyload@19.1.3/dist/lazyload.iife.min.js"></script><script defer src="https://cdn.jsdmirror.cn/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script src="https://cdn.jsdmirror.cn/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdmirror.cn/npm/swiper@11.0.5/swiper-bundle.min.js"></script><!-- Music player scripts--><script>var meting_api = 'https://api.injahow.cn/meting/?server=:server&type=:type&id=:id&auth=:auth&r=:r';</script><script defer src="https://cdn.jsdmirror.cn/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script defer src="https://cdn.jsdmirror.cn/npm/meting@2.0.1/dist/Meting.min.js"></script><!-- Cover color processing scripts--><script defer src="https://cdn.jsdmirror.cn/npm/colorthief@2.6.0/dist/color-thief.min.js"></script><script>window.paceOptions = {
+  restartOnPushState: false
+}
+
+Solitude.addGlobalFn('pjaxSend', () => {
+  Pace.restart()
+}, 'pace_restart')
+</script><script src="https://cdn.jsdmirror.cn/npm/pace-js@1.2.4/pace.min.js"></script><!-- Search functionality--><!-- Main module dynamically imports enabled first-party features.--><script type="module" src="/js/main.js?v=1.1.0"></script><div class="js-pjax"><script>(() => {
+    const getCount = () => {
+        const ele = document.querySelectorAll('.twikoo-count')
+        if (!ele) return
+        twikoo.getCommentsCount({
+            envId: 'https://mc118cn-twikoo.netlify.app/.netlify/functions/twikoo',
+            region: '',
+            urls: [window.location.pathname],
+            includeReply: false
+        }).then(res => {
+            ele.forEach(item => item.textContent = res[0].count)
+        }).catch(err => {
+            console.error(err)
+        })
+    }
+    const init = () => {
+        twikoo.init(Object.assign({
+            el: '#twikoo-wrap',
+            envId: 'https://mc118cn-twikoo.netlify.app/.netlify/functions/twikoo',
+            region: '',
+            path: window.location.pathname,
+            onCommentLoaded: () => {
+                Solitude.config.lightbox && Solitude.lightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+            }
+        }, null))
+
+         && getCount()
+        Solitude.owoBig({
+            body: '.OwO-body',
+            item: '.OwO-items li'
+        })
+
+        true && barrageTwikoo()
+    }
+
+    const loadTwikoo = () => {
+        if (typeof twikoo === 'object') setTimeout(init,0)
+        else Solitude.getScript('https://s4.zstatic.net/ajax/libs/twikoo/1.6.44/twikoo.all.min.js').then(init)
+    }
+
+    if ('Twikoo' === 'Twikoo' || true) {
+        if (true) Solitude.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+        else loadTwikoo()
+    } else {
+        window.loadTwoComment = loadTwikoo
+    }
+})()
+</script><script>async function barrageTwikoo() {
+    await fetch("https://mc118cn-twikoo.netlify.app/.netlify/functions/twikoo", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            event: "COMMENT_GET",
+            accessToken: "",
+            url: window.location.pathname
+        })
+    }).then(async res => {
+        if (!res.ok) throw new Error("HTTP error! status: " + res.status)
+        const data = await res.json();
+        const init = () => {
+            initializeCommentBarrage((data.data).map(item => Object.assign({
+                content: item.comment,
+                nick: item.nick,
+                mailMd5: item.mailMd5,
+                id: item.id
+            })))
+        }
+        if (typeof initializeCommentBarrage === "undefined") await Solitude.getScript('/js/third_party/barrage.min.js?v=1.1.0').then(init)
+        else init()
+    }).catch(error => console.error("An error occurred while fetching comments: ", error))
+}</script></div></div><!-- pjax--><script>function initPjax() {
+    if (typeof Pjax === 'undefined') {
+        setTimeout(initPjax, 100);
+        return;
+    }
+
+    const instance = new Pjax({
+        elements: 'a:not([target="_blank"])',
+        selectors: ["title","#body-wrap","#site-config","meta[name=\"description\"]",".js-pjax","meta[property^=\"og:\"]","#config-diff",".rs_show",".rs_hide"],
+        cacheBust: false,
+        analytics: false,
+        scrollRestoration: false
+    })
+
+    Solitude.pjax = instance;
+
+    document.querySelectorAll('script[data-pjax]').forEach(item => {
+        const newScript = document.createElement('script')
+        const content = item.text || item.textContent || item.innerHTML || ""
+        Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+        newScript.appendChild(document.createTextNode(content))
+        item.parentNode.replaceChild(newScript, item)
+    })
+
+    document.addEventListener('pjax:send', () => {
+        document.dispatchEvent(new CustomEvent('solitude:beforeNavigate'))
+        Solitude.disposePage?.()
+        Object.values(window.globalFn?.pjax || {}).forEach(dispose => dispose())
+        if (window.globalFn) window.globalFn.pjax = {}
+    })
+
+    document.addEventListener('pjax:complete', async () => {
+        await Solitude.refresh()
+
+        document.querySelectorAll('script[data-pjax]').forEach(item => {
+            const newScript = document.createElement('script')
+            const content = item.text || item.textContent || item.innerHTML || ""
+            Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+            newScript.appendChild(document.createTextNode(content))
+            item.parentNode.replaceChild(newScript, item)
+        })
+
+        Solitude.config.lazyload.enable && window.lazyLoadInstance?.update()
+        document.dispatchEvent(new CustomEvent('solitude:afterNavigate', {
+            detail: {page: Solitude.page}
+        }))
+
+    })
+
+    document.addEventListener('pjax:error', (e) => {
+        if (e.request.status === 404) {
+            Solitude.navigate('/404.html')
+        }
+    })
+}
+
+// 初始化 Pjax
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPjax);
+} else {
+    initPjax();
+}</script><!-- google adsense--><div><div class="needEndHide" id="nav-music" data-solitude-action="handleMusicClick" data-solitude-event="true"><div id="nav-music-hoverTips"><button class="music-control-btn" id="music-prev" type="button" title="切换到上一首" aria-label="切换到上一首" data-solitude-action="musicSkipBack" data-solitude-stop="true"><i class="fas fa-backward-step"></i></button><button class="music-control-btn" id="music-pause" type="button" title="暂停音乐" aria-label="暂停音乐" data-solitude-action="musicToggle" data-solitude-stop="true"><i class="fas fa-pause"></i></button><button class="music-control-btn" id="music-play" type="button" title="播放音乐" aria-label="播放音乐" data-solitude-action="musicToggle" data-solitude-stop="true"><i class="fas fa-play"></i></button><button class="music-control-btn" id="music-next" type="button" title="切换到下一首" aria-label="切换到下一首" data-solitude-action="musicSkipForward" data-solitude-stop="true"><i class="fas fa-forward-step"></i></button></div><meting-js id="17815957422" server="netease" type="playlist" mutex="true" preload="none" theme="var(--efu-main)" data-lrctype="0" order="random" volume="0.6"></meting-js></div></div></body></html>
